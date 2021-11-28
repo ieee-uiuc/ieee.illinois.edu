@@ -1,0 +1,202 @@
+@import "./colors.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    //TODO: temp fix for side scroll moblie veiw
+    overflow: hidden;
+}
+
+.area {
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    // $bodyheight: 100% !default;
+    position: sticky;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1220%26quot%3b)' fill='none'%3e%3cpath d='M -286.2225060611396%2c370 C -245.02%2c335 -162.62%2c204.2 -80.2225060611396%2c195 C 2.18%2c185.8 43.38%2c322.6 125.7774939388604%2c324 C 208.18%2c325.4 249.38%2c197.2 331.7774939388604%2c202 C 414.18%2c206.8 455.38%2c348.8 537.7774939388604%2c348 C 620.18%2c347.2 661.38%2c203 743.7774939388604%2c198 C 826.18%2c193 867.38%2c317.6 949.7774939388604%2c323 C 1032.18%2c328.4 1073.38%2c225.8 1155.7774939388605%2c225 C 1238.18%2c224.2 1304.93%2c310.6 1361.7774939388605%2c319 C 1418.62%2c327.4 1424.36%2c277.4 1440%2c267' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -24.962557594451226%2c247 C 16.24%2c271.6 98.64%2c376.6 181.03744240554877%2c370 C 263.44%2c363.4 304.64%2c219.2 387.03744240554875%2c214 C 469.44%2c208.8 510.64%2c348.6 593.0374424055487%2c344 C 675.44%2c339.4 716.64%2c202.6 799.0374424055487%2c191 C 881.44%2c179.4 922.64%2c268.8 1005.0374424055487%2c286 C 1087.44%2c303.2 1128.64%2c265.8 1211.0374424055487%2c277 C 1293.44%2c288.2 1334.64%2c354.2 1417.0374424055487%2c342 C 1499.44%2c329.8 1618.44%2c224 1623.0374424055487%2c216 C 1627.63%2c208 1476.61%2c284.8 1440%2c302' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -286.38720875847815%2c266 C -245.19%2c280 -162.79%2c336.4 -80.38720875847814%2c336 C 2.01%2c335.6 43.21%2c256.8 125.61279124152186%2c264 C 208.01%2c271.2 249.21%2c369.4 331.61279124152185%2c372 C 414.01%2c374.6 455.21%2c279.8 537.6127912415219%2c277 C 620.01%2c274.2 661.21%2c371.8 743.6127912415219%2c358 C 826.01%2c344.2 867.21%2c218.6 949.6127912415219%2c208 C 1032.01%2c197.4 1073.21%2c291 1155.6127912415218%2c305 C 1238.01%2c319 1304.74%2c275.6 1361.6127912415218%2c278 C 1418.49%2c280.4 1424.32%2c309.2 1440%2c317' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -402.415915508854%2c284 C -361.22%2c281 -278.82%2c251.8 -196.41591550885403%2c269 C -114.02%2c286.2 -72.82%2c380.4 9.584084491145973%2c370 C 91.98%2c359.6 133.18%2c222.6 215.58408449114597%2c217 C 297.98%2c211.4 339.18%2c343 421.584084491146%2c342 C 503.98%2c341 545.18%2c218.4 627.584084491146%2c212 C 709.98%2c205.6 751.18%2c310.8 833.584084491146%2c310 C 915.98%2c309.2 957.18%2c209.6 1039.5840844911459%2c208 C 1121.98%2c206.4 1165.5%2c299.6 1245.5840844911459%2c302 C 1325.67%2c304.4 1401.12%2c236.4 1440%2c220' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -221.58594547052675%2c285 C -180.39%2c271.2 -97.99%2c210 -15.585945470526752%2c216 C 66.81%2c222 108.01%2c308 190.41405452947325%2c315 C 272.81%2c322 314.01%2c254.8 396.4140545294732%2c251 C 478.81%2c247.2 520.01%2c294.6 602.4140545294732%2c296 C 684.81%2c297.4 726.01%2c246.4 808.4140545294732%2c258 C 890.81%2c269.6 932.01%2c363.8 1014.4140545294732%2c354 C 1096.81%2c344.2 1138.01%2c218.4 1220.4140545294733%2c209 C 1302.81%2c199.6 1382.5%2c299 1426.4140545294733%2c307 C 1470.33%2c315 1437.28%2c260.6 1440%2c249' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3cpath d='M -282.305845933929%2c334 C -241.11%2c307.6 -158.71%2c200.6 -76.30584593392898%2c202 C 6.09%2c203.4 47.29%2c329.6 129.694154066071%2c341 C 212.09%2c352.4 253.29%2c257.4 335.694154066071%2c259 C 418.09%2c260.6 459.29%2c361.4 541.6941540660711%2c349 C 624.09%2c336.6 665.29%2c200.4 747.6941540660711%2c197 C 830.09%2c193.6 871.29%2c330 953.6941540660711%2c332 C 1036.09%2c334 1077.29%2c215.8 1159.694154066071%2c207 C 1242.09%2c198.2 1309.63%2c286.2 1365.694154066071%2c288 C 1421.76%2c289.8 1425.14%2c230.4 1440%2c216' stroke='rgba(255%2c 255%2c 255%2c 0.1)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1220'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background: linear-gradient(0deg, rgba(8,90,140,1) 0%, rgba(8,90,135,1) 9%, rgba(10,106,166,1) 22%, rgba(149,218,255,1) 71%, rgba(171,219,255,1) 89%, rgba(246,246,246,1) 100%);
+    
+}
+
+.circles {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.circles li {
+    position: sticky;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    top: -150px;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+        border-radius: 0;
+        border: solid rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+        border: solid rgba(255, 255, 255, 1);
+    }
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+//fadein css
+
+.fade-in-sectionleft {
+    opacity: 0;
+    transform: translateX(20vh);
+    visibility: hidden;
+    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    will-change: opacity, transform, visibility;
+}
+.fade-in-sectionleft.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.fade-in-sectionright {
+    opacity: 0;
+    transform: translateX(-20vh);
+    visibility: hidden;
+    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    will-change: opacity, transform, visibility;
+}
+.fade-in-sectionright.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.fade-in-sectionup {
+    opacity: 0;
+    transform: translateY(20vh);
+    visibility: hidden;
+    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    will-change: opacity, transform, visibility;
+}
+.fade-in-sectionup.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
+
+.fade-in-sectiondown {
+    opacity: 0;
+    transform: translateY(-20vh);
+    visibility: hidden;
+    transition: opacity 2400ms ease-out, transform 1200ms ease-out, visibility 2400ms ease-out;
+    will-change: opacity, transform, visibility;
+}
+.fade-in-sectiondown.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}

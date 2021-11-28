@@ -1,0 +1,15 @@
+@import '../../colors.scss';
+
+.main-contact {
+    background: $darkish;
+    height: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    font-size: .5em;
+}

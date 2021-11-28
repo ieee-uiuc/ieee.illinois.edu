@@ -1,0 +1,258 @@
+@import "../../colors";
+
+.landing {
+    position: relative;
+    width: 100vw;
+    height: $page;
+    opacity: 0.65;
+    margin-bottom: 5em;
+    overflow: hidden;
+
+    &__image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        &__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+    &__image img {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: $page;
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        &__text {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            top: 10vh;
+            &__title {
+                font-size: 8em;
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                line-height: 1.1em;
+                // margin: 3vh;
+            }
+            &__content {
+                color: white;
+                font-size: 2vw;
+                font-weight: 400;
+                text-align: center;
+                max-width: 60vw;
+                line-height: 1.1em;
+                // margin: 1em 0 2em 0;
+            }
+        }
+    }
+}
+@media screen and (max-width: 850px) {
+    .landing {
+        &__content {
+            &__text {
+                &__title {
+                    font-size: 5em;
+                    margin: .25em 0 .45em 0;
+                }
+                &__content{
+                    font-size: 1.25em;
+                    margin:0 0 2em 0;
+                }
+            }
+        }
+    }
+}
+
+.ieee {
+    font-size: 1.5em;
+}
+.uiuc {
+    font-size: .9em;
+}
+
+.arrow-container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    bottom: 10vh;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.arrow-1 {
+    width: 100px;
+    height: 100px;
+    background: white;
+    opacity: 0.5;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.arrow-2 {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    display: table;
+}
+
+.arrow-2:before {
+    width: 52px;
+    height: 52px;
+    content: "";
+    border: 2px solid $darkest;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.arrow-2 i.fa {
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: $darkest;
+}
+
+/* Custom Animate.css */
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.4, 0.4, 0.4);
+        transform: scale3d(0.4, 0.4, 0.4);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.4, 0.4, 0.4);
+        transform: scale3d(0.4, 0.4, 0.4);
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+    animation-iteration-count: infinite;
+}
+
+
+.button ul li a{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: solid white;
+    margin: 0 2vw;
+}
+.button ul li a:hover{
+border: none;
+}
+.button ul li a,
+.button ul li a:after,
+.button ul li a:before {
+	-webkit-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+}
+.button ul {
+	display: block;
+}
+.button ul li {
+    display: inline-block;
+}
+.button ul li a {
+	color: white;
+	display: block;
+	padding: 0 30px;
+	text-decoration: none;
+}
+
+.button{
+    margin: 2em 0 0 0;
+    font-size: 1.35em;
+    font-weight: 700;
+}
+
+
+.button.effect ul li a {
+    position: relative;
+    text-align: center;
+}
+.button.effect ul li a:before {
+    color: $lightest;
+    content: '[';
+    display: block;
+    font-size: 1.5em;
+    left: 30px;
+    opacity: 0;
+    position: absolute;
+    top: -.35em;
+
+}
+.button.effect ul li a:after {
+    color: $lightest;
+    content: ']';
+    display: block;
+    font-size: 1.5em;
+    opacity: 0;
+    position: absolute;
+    right: 30px;
+    top: -.35em;
+}
+.button.effect ul li a:hover:before {
+    left: 15px;
+    opacity: 1;
+}
+.button.effect ul li a:hover:after {
+    opacity: 1;
+    right: 15px;
+}	
+.button.effect ul li a:hover {
+    background: trasnparent;
+}

@@ -1,0 +1,155 @@
+@import "../../colors.scss";
+
+.nav-container {
+    background-color: $darkest;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    left: 0;
+    z-index: 10;
+    height: 3.5em;
+}
+
+nav {
+    position: relative;
+    height: 100%;
+}
+
+.logoBtn {
+    display: flex;
+    padding: 5px 10px;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoBtn a {
+    align-self: center;
+    opacity: 1;
+}
+
+.logoBtn a:hover {
+    opacity: 0.8;
+}
+
+.logoBtn img {
+    width: 100px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    background-color: $light;
+    width: 35px;
+    padding: 1px;
+    margin: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+.animateBar.bar1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+    background: $lightest;
+    width: 30px;
+}
+
+.animateBar.bar2 {
+    opacity: 0;
+}
+
+.animateBar.bar3 {
+    transform: rotate(45deg) translate(-4px, -5px);
+    background: $lightest;
+    width: 30px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.links {
+    width: 100%;
+    transform: translateX(-100%);
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $darkest;
+    z-index: 10;
+    opacity: 1;
+    transition: transform 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.new-links {
+    width: 100%;
+    transform: translateX(0%);
+    position: fixed;
+    top: 51;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.links li a {
+    display: block;
+    padding: 10px;
+    color: $light;
+    transition: all 0.3s ease-in-out;
+    font-size: 18px;
+}
+
+.links li a:hover {
+    padding: 10px 25px;
+    color: $lightest;
+}
+
+.adminLi {
+    display: none;
+}
+
+.admin {
+    color: $light;
+}
+
+@media screen and (min-width: 780px) {
+    .logoBtn {
+        border: none;
+        padding: 0;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+    }
+
+    .links {
+        position: relative;
+        display: flex;
+        width: auto;
+        top: auto;
+        transform: translateX(0%);
+    }
+    
+    .new-links {
+        width: 100%;
+        transform: translateX(0%);
+        position: relative;
+        top: auto;
+    }
+
+    .links li a {
+        font-size: 18px;
+    }
+
+    .links li a:hover {
+        padding: 10px;
+        background: none;
+    }
+}

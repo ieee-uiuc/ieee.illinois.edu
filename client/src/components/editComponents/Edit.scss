@@ -1,0 +1,80 @@
+@import '../../colors.scss';
+
+
+.edit{
+    min-height: 70vh;
+    margin-bottom: 20px;
+}
+
+.edit .same-component{
+    display: block;
+    max-width: 400px;
+    margin:0 auto;
+    margin-top: 50px;
+
+}
+
+.edit .same-form .btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn{
+    background: crimson;
+}
+
+.cancel-btn:hover{
+    background: rgb(214,51,84);
+}
+
+.updated{
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.1rem;
+    color:green;
+}
+
+.new-updated{
+    display: block;
+}
+
+
+
+/* upload form */
+
+.edit .upload{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+
+.edit .upload input{
+   align-self: flex-start; 
+   width: 200px;
+}
+
+.edit #file_img{
+    width:60px;
+    position: relative;
+    width:100px;
+    height: 45px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+
+.edit .upload img{
+    width:100px;
+    display: block;
+    height: 75px;
+
+}
+
+
+
+
+

@@ -1,0 +1,64 @@
+@import "../../../colors";
+
+.signUp {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    min-height: $pageHeight;
+    &__body {
+        position: relative;
+        top: 5vh;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-around;
+        // gap: 1em;
+        &__grainger {
+            margin: 1em 0 0 0 ;
+            flex: 50%;
+            &__title {
+                font-size: 1.5em;
+                padding: .5em;
+                color: $darkest;
+                font-weight: 600;
+            }
+            &__body {
+                font-size: 1em;
+                color: $dark;
+                font-weight: 400;
+                line-height: 1.5em;
+            }
+        }
+        &__nongrainger {
+            margin: 1em 0 0 0 ;
+            flex: 50%;
+            &__title {
+                font-size: 1.5em;
+                padding: .5em;
+                color: $darkest;
+                font-weight: 600;
+            }
+            &__body {
+                font-size: 1em;
+                padding: 1.5em;
+                color: $dark;
+                font-weight: 400;
+                line-height: 1.5em;
+            }
+        }
+    }
+    &__title {
+        position: relative;
+        top: 5vh;
+        font-size: 2em;
+        padding: 35px;
+        color: $lightest;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__link{
+        text-decoration: underline;
+    }
+}

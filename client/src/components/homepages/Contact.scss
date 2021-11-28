@@ -1,0 +1,76 @@
+@import "../../colors";
+
+.contact {
+    padding: 2em 0;
+    &__title {
+        text-align: center;
+        color: white;
+        font-size: 5em;
+        font-weight: 700;
+    }
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-radius: 1em;
+        &__form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em 2em;
+
+            &__content {
+            }
+        }
+        &__info {
+            padding: 2em;
+            &__title {
+                color: $lightest;
+                font-size: 1.25em;
+                font-weight: 600;
+            }
+            &__text {
+                color: white;
+            }
+        }
+    }
+    &__name {
+        width: 15em;
+    }
+    &__email {
+        width: 15em;
+    }
+    &__message {
+        width: 15em;
+    }
+    &__lable {
+        color: white;
+    }
+}
+.contact-media {
+    
+}
+.fab {
+    padding: .1em;
+    font-size: 1.25em;
+    text-align: center;
+    text-decoration: none;
+    margin: .35em .5em;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    z-index: 1;
+    color: white;
+}
+
+.fa-github {
+    color: white;
+}
+.fa-instagram {
+    color: white;
+}

@@ -1,0 +1,69 @@
+@import '../../colors.scss';
+
+
+.login{
+    background: white;
+    padding: 40px;
+    min-height: 75vh;
+}
+.login h3{
+    text-align: center;
+    padding-bottom: 10px ;
+    color: $darkest;
+    letter-spacing: 0.1rem;
+}
+.login-center{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.login-center form{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 2px 1px $dark;
+    padding: 20px;
+}
+
+.login-center form p{
+    margin-bottom: 10px;
+    text-align: center;
+    color: $lightish;
+    letter-spacing: 0.1rem;
+}
+
+.login-center label{
+    margin-bottom: 5px;
+    letter-spacing: 0.2rem;
+    color: $darkest;
+}
+.login-center form input{
+    padding: 7px;
+    border: 1px solid $darkish;
+    outline:  none;
+}
+.login-center form input:nth-of-type(1){
+    margin-bottom: 10px;
+
+}
+.login-center .login-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-center button{
+    margin-top: 15px;
+    padding: 12px;
+    background: $dark;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: $lightest;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    max-width: 160px;
+    border-radius: 30px;
+}
+.login-center button:hover{
+    background: $darkish;
+
+}
