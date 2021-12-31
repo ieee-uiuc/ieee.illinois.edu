@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Contact.scss'
 import axios from 'axios'
-import Load from '../../images/load2.gif'
+// import Load from '../../images/load2.gif'
 
 const Contact = () => {
 
@@ -52,11 +52,11 @@ const Contact = () => {
     }
 
     return (
-        <div class="contact">
-            <p class="contact__title">Contact</p>
-            <div class="contact__container">
-                {/* <div class="contact__container__form">
-                    <div class="contact__container__form__content">
+        <div className="contact">
+            <p className="contact__title">Contact</p>
+            <div className="contact__container">
+                {/* <div className="contact__container__form">
+                    <div className="contact__container__form__content">
                         <form onSubmit={formSubmit}>
                             <p>{banner}</p>
                             <p className="contact__lable" htmlFor="name">Name</p>
@@ -92,29 +92,30 @@ const Contact = () => {
                     </div>
 
                 </div> */}
-                <div class="contact__container__info">
-                    <p class="contact__container__info__title">
+                <div className="contact__container__info">
+                    <p className="contact__container__info__title">
                         Mailing Address:
                     </p>
-                    <i class="contact__container__info__text">
+                    <i className="contact__container__info__text">
                         IEEE UIUC Student Branch
                         <br />ECE Building, Room 1016
                         <br />306 N. Wright St.
                         <br />Urbana, IL 61801
                     </i>
-                    <p class="contact__container__info__title">
+                    <p className="contact__container__info__title">
                         Email Address:
                     </p>
-                    <i class="contact__container__info__text">
+                    <i className="contact__container__info__text">
                         ieee.uiuc@gmail.com
                     </i>
-                    <p class="contact__container__info__title">
+                    <p className="contact__container__info__title__social">
                         Socials:
                     </p>
                     <div className="contact-media">
-                        <a href="https://github.com/ieee-uiuc" class="fab fa-github"></a>
-                        <a href="https://www.facebook.com/ieeeuiuc" class="fab fa-facebook"></a>
-                        <a href="https://www.instagram.com/ieee.uiuc/" class="fab fa-instagram"></a>
+                        <a href="https://github.com/ieee-uiuc" alt="github" className="fab fa-github"></a>
+                        <a href="https://www.facebook.com/ieeeuiuc" alt="facebook" className="fab fa-facebook"></a>
+                        <a href="https://www.instagram.com/ieee.uiuc/" alt="instagram" className="fab fa-instagram"></a>
+                        <a href="https://discord.gg/Gc9qPBxzbS" alt="discord" className="fab fa-discord"></a>
                     </div>
                 </div>
             </div>

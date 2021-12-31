@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo.png';
@@ -62,10 +62,12 @@ const Navbar = () => {
                     <ul className={toggle ? "new-links links" : "links"} onClick={closeNavbar}>
                         {/* <li onClick={() => scrollToElement('Home')}><Link to="/">Home</Link></li> */}
                         <li onClick={() => scrollToElement('Landing')}><Link to="/">Home</Link></li>
-                        <li onClick={() => scrollToElement('Social')}><Link to="/">Social</Link></li>
+                        <li onClick={() => scrollToElement('about')}><Link to="/">About</Link></li>
+                        <li onClick={() => scrollToElement('UpcomingEvents')}><Link to="/">Events</Link></li>
                         {/* <li onClick={() => scrollToElement('Board')}><Link to="/">Events</Link></li> */}
-                        <li onClick={() => scrollToElement('Technicals')}><Link to="/">Technical</Link></li>
+                        {/* <li onClick={() => scrollToElement('PastEvents')}><Link to="/">previous</Link></li> */}
                         <li onClick={() => scrollToElement('Contact')}><Link to="/">Contact</Link></li>
+                        <li><Link to="/Calendar">Calendar</Link></li>
                         <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/admin':'/'}>{isLogin?<div className="admin">Admin</div>:''}</Link></li>
                         <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/register':'/'}>{isLogin?<div className="admin">Register</div>:''}</Link></li>
                         <li onClick={logOutSubmit}> <Link to={isLogin?'/':'/login'}>{isLogin?"logout":"login"}</Link></li>

@@ -1,140 +1,57 @@
 @import "../../colors";
 
 .about {
-    position: relative;
-    width: 100vw;
-    min-height: $pageHeight;
     display: flex;
-    align-items: center;
     justify-content: center;
-    opacity: 1;
-    margin-bottom: 5em;
-    &__container {
-        position: relative;
-        border: solid rgba(0, 0, 0, 0.9);
-        border-radius: 1em;
-        box-shadow: 0px 0px 40px 20px rgba(255, 255, 255, 0.2);
-        &__alma {
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-            max-height: 90vh;
-            max-width: 95vw;
-            opacity: 0.5;
-            z-index: 0;
-        }
-    }
-    &__image {
-        z-index: 1;
-        display: flex;
-        justify-content: center;
-    }
-    &__content {
-        padding: 0 1em;
-        border-radius: .75em;
-        z-index: 5;
-        opacity: 0.9999999;
-        background-color: $darkest;
-        // box-shadow: inset 10px 0 120px rgba(0, 0, 0, 0.1), inset -10px 0 120px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    margin: 0;
+    font-weight: 600;
     &__title {
-        font-size: 7em;
-        line-height: .9em;
-        padding: 35px;
-        color: white;
-        font-weight: 900;
+        font-size: 5em;
+        font-weight: 700;
         text-align: center;
     }
     &__text {
-        color: white;
-        width: 75vw;
-        max-width: 1080px;
-        font-weight: 600;
+        max-width: 80vw;
+        text-align: center;
+        margin: 1.5em 0 0 0;
+        line-height: 1.5em;
     }
-    &__button:hover{
-
-    }
-    &__button {
-        display: inline-block;
-        padding: .35em 2em;
-        border-radius: 1rem;
-        color: white;
-        transition: all .3s;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        margin: 1em;
-        width: 7.5em;
-        box-shadow: 2px 2px 6px 0 $darkish;
-        &__text {
-            text-align: center;
-            vertical-align: middle;
-            font-weight: 600;
-            line-height: 2em;
-        }
-        &__spacing {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
+    &__button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1.25em 0 0 0;
+        font-size: 1.5em;
+        &__button {
+            border: black 2px solid;
             margin: 1em;
+            padding: 0.75em 0;
+            width: 35vw;
+            text-align: center;
+            color: black;
+            transition: ease-in-out 0.25s;
         }
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: -1%;
-          left: -1%;
-          width: 102%;
-          height: 102%;
-          background-color: $lightest;
-          border-radius: 1rem;
-          z-index: -2;
-        }
-        &:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 100%;
-          background-color: darken($light, 15%);
-          transition: all .3s;
-          border-radius: 1rem;
-          z-index: -1;
-        }
-        &:hover {
-          color: $darkest;
-          &:before {
-            width: 100%;
-          }
-        }
-      }
-    &__button:hover {
-        background-color: $dark;
-        color: white;
-        box-shadow: 1px 1px 4px 0px $darkish;
-    }
-}
-@media screen and (max-width: 850px) {
-    .about {
-        &__container {
-            border-style: none;
-            &__alma {
-                display: none;
-                // top: 25%;
-                // transform: translate(0, -80%);
+        @media screen and (max-width: 500px) {
+            &__button{
+                width: 40vw;
+                margin: 0 .5em;
             }
         }
-        &__content {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            width: 95vw;
-        }
-        &__text {
-            
+        &__button:hover {
+            background-color: black;
+            color: white;
         }
     }
+    @media screen and (min-width: 800px) {
+        &__text {
+            max-width: 55vw;
+        }
+    }
+}
+
+.margin-about{
+    padding: 5em 0 ;
 }

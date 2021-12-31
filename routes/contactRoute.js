@@ -14,7 +14,10 @@ router.post('/', (req, res) => {
         service: 'Gmail',
         auth: {
             user: process.env.USER,
-            password: process.env.PASSWORD
+            pass: process.env.PASSWORD
+        },
+        tls:{
+            rejectUnauthorized: false
         }
     })
 

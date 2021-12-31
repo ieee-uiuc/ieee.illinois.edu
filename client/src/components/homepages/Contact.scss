@@ -4,7 +4,7 @@
     padding: 2em 0;
     &__title {
         text-align: center;
-        color: white;
+        color: black;
         font-size: 5em;
         font-weight: 700;
     }
@@ -26,12 +26,18 @@
         &__info {
             padding: 2em;
             &__title {
-                color: $lightest;
+                color: black;
                 font-size: 1.25em;
-                font-weight: 600;
+                font-weight: 700;
+                &__social {
+                    color: black;
+                    font-size: 1.25em;
+                    font-weight: 600;
+                }
             }
             &__text {
-                color: white;
+                color: black;
+                font-weight: 500;
             }
         }
     }
@@ -45,32 +51,34 @@
         width: 15em;
     }
     &__lable {
-        color: white;
+        color: black;
     }
 }
 .contact-media {
-    
 }
 .fab {
-    padding: .1em;
+    padding: 0.1em;
     font-size: 1.25em;
     text-align: center;
     text-decoration: none;
-    margin: .35em .5em;
+    margin: 0.35em 0.5em;
 }
 
-.fa:hover {
-    opacity: 0.7;
+.fab:hover {
+    opacity: 0.65;
 }
 
 .fa-facebook {
     z-index: 1;
-    color: white;
+    color: black;
 }
 
 .fa-github {
-    color: white;
+    color: black;
 }
 .fa-instagram {
-    color: white;
+    color: black;
+}
+.fa-discord {
+    color: black;
 }

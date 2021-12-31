@@ -196,17 +196,17 @@ const SocialsAdmin = () => {
             <div className="same-item">
                 <div className="about-info">
                     {socialData.map((item) => (
-                        <div className="socials-admin" key={item._id}>
+                        <div className="events-admin" key={item._id}>
                             <div className="icons">
-                                <Link to={`/editSocial/${item._id}`}><i className="fas fa-edit"></i></Link>
+                                <Link to={`/editevent/${item._id}`}><i className="fas fa-edit"></i></Link>
                                 <i className="fas fa-trash" onClick={() => deleteSocial(item._id)}></i>
                             </div>
 
-                            <div className="single-social">
-                                <div className="single-social-img">
+                            <div className="single-event">
+                                <div className="single-event-img">
                                     <img src={item.images.url} alt="" />
                                 </div>
-                                <div className="single-social-info">
+                                <div className="single-event-info">
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
                                     <i>{item.date}</i>

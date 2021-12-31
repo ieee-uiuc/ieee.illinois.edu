@@ -1,32 +1,36 @@
 @import "../../colors";
 
+.background {
+
+}
+
 .landing {
     position: relative;
     width: 100vw;
     height: $page;
     opacity: 0.65;
-    margin-bottom: 5em;
     overflow: hidden;
-
+    opacity: 0.999;
     &__image {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        &__overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
-        }
+
+        // &__overlay {
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     background-color: rgba(0,0,0,.7);
+        // }
     }
     &__image img {
         object-fit: cover;
-        min-width: 100%;
+        min-width: 110%;
         min-height: $page;
-        filter: blur(10px);
-        -webkit-filter: blur(10px);
+        filter: blur(10px) brightness(35%) sepia(1%) opacity(100%) grayscale(75%);
+        -webkit-filter: blur(10px) brightness(35%) sepia(1%) opacity(100%) grayscale(75%);
     }
 
     &__content {
@@ -35,6 +39,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        z-index: 100;
         &__text {
             display: flex;
             width: 100vw;
@@ -49,7 +54,7 @@
                 color: white;
                 font-weight: 700;
                 line-height: 1.1em;
-                // margin: 3vh;
+                text-shadow: 1px 1px 5px black;
             }
             &__content {
                 color: white;
@@ -59,6 +64,7 @@
                 max-width: 60vw;
                 line-height: 1.1em;
                 // margin: 1em 0 2em 0;
+                text-shadow: 1px 1px 2px black;
             }
         }
     }
@@ -69,11 +75,11 @@
             &__text {
                 &__title {
                     font-size: 5em;
-                    margin: .25em 0 .45em 0;
+                    margin: 0.25em 0 0.45em 0;
                 }
-                &__content{
+                &__content {
                     font-size: 1.25em;
-                    margin:0 0 2em 0;
+                    margin: 0 0 2em 0;
                 }
             }
         }
@@ -84,7 +90,7 @@
     font-size: 1.5em;
 }
 .uiuc {
-    font-size: .9em;
+    font-size: 0.9em;
 }
 
 .arrow-container {
@@ -183,42 +189,40 @@
     animation-iteration-count: infinite;
 }
 
-
-.button ul li a{
+.button ul li a {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: solid white;
     margin: 0 2vw;
 }
-.button ul li a:hover{
-border: none;
+.button ul li a:hover {
+    border: none;
 }
 .button ul li a,
 .button ul li a:after,
 .button ul li a:before {
-	-webkit-transition: all 300ms ease-in-out;
-	transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 .button ul {
-	display: block;
+    display: block;
 }
 .button ul li {
     display: inline-block;
 }
 .button ul li a {
-	color: white;
-	display: block;
-	padding: 0 30px;
-	text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0 30px;
+    text-decoration: none;
 }
 
-.button{
+.button {
     margin: 2em 0 0 0;
     font-size: 1.35em;
     font-weight: 700;
 }
-
 
 .button.effect ul li a {
     position: relative;
@@ -226,24 +230,23 @@ border: none;
 }
 .button.effect ul li a:before {
     color: $lightest;
-    content: '[';
+    content: "[";
     display: block;
     font-size: 1.5em;
     left: 30px;
     opacity: 0;
     position: absolute;
-    top: -.35em;
-
+    top: -0.35em;
 }
 .button.effect ul li a:after {
     color: $lightest;
-    content: ']';
+    content: "]";
     display: block;
     font-size: 1.5em;
     opacity: 0;
     position: absolute;
     right: 30px;
-    top: -.35em;
+    top: -0.35em;
 }
 .button.effect ul li a:hover:before {
     left: 15px;
@@ -252,7 +255,7 @@ border: none;
 .button.effect ul li a:hover:after {
     opacity: 1;
     right: 15px;
-}	
+}
 .button.effect ul li a:hover {
     background: trasnparent;
 }

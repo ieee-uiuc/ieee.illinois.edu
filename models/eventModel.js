@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const technicalSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
 
     product_id:{
         type:String,
@@ -22,8 +22,16 @@ const technicalSchema = new mongoose.Schema({
     images:{
         type:Object,
         required:true
+    },
+    location:{
+        type:String,
+        required:true
+    },
+    upcoming:{
+        type:Boolean,
+        required:true
     }
 
 })
 
-module.exports = mongoose.model('technicals', technicalSchema)
+module.exports = mongoose.model('events', eventSchema)

@@ -1,19 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { scroller } from "react-scroll"
 import './Footer.scss'
 
 const Footer = () => {
 
     // for scralli navbar elements
-    const scrollToElement = (element) => {
-        scroller.scrollTo(element, {
-            duration: 800,
-            delay: 50,
-            smooth: true,
-            offset: -80
-        })
-    }
+    // const scrollToElement = (element) => {
+    //     scroller.scrollTo(element, {
+    //         duration: 800,
+    //         delay: 50,
+    //         smooth: true,
+    //         offset: -80
+    //     })
+    // }
 
     return (
         <React.Fragment>

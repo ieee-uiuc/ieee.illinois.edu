@@ -3,7 +3,7 @@ import './Admin.scss'
 import AboutAdmin from './AboutAdmin'
 import SocialAdmin from './SocialAdmin'
 import BoardAdmin from './BoardAdmin'
-import TechnicalsAdmin from './TechnicalsAdmin'
+import EventsAdmin from './EventsAdmin'
 
 
 const Admin = () => {
@@ -34,8 +34,8 @@ const Admin = () => {
                     <br />
 
 
-                    <h4 className="admin-title">Technicals Component</h4>
-                    <TechnicalsAdmin />
+                    <h4 className="admin-title">Events Component</h4>
+                    <EventsAdmin />
 
                     <br />
                     <br />

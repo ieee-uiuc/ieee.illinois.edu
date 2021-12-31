@@ -1,9 +1,18 @@
 @import "../../../colors";
 
-.calendar{
-    width: 100vw;
+.calendar {
     min-height: $pageHeight;
-    &__container{
-        background-color: $dark;
+    &__container {
+        margin: 1em 4em 0em 4em;
     }
+    @media screen and (max-width: 800px) {
+        &__container {
+            margin: 3em 1em 0em 1em;
+        }
+    }
+}
+
+.event {
+    padding: 3px 0px;
+    font-weight: 700;
 }

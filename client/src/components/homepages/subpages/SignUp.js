@@ -1,12 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import './SignUp.scss'
-import { DataContext } from '../../Context/GlobalContext'
 
 const SignUp = () => {
-
-    // const state = useContext(DataContext)
-    // const [SignUp] = state.SignUp
-    // console.log(SignUp)
 
     return (
         <div className="signUp">

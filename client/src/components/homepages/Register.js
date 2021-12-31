@@ -3,10 +3,6 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
-
-
-
-
 const Register = () => {
 
     const [user, setUser] = useState({username:'',email:'',password:''});
@@ -26,23 +22,23 @@ const onchangeInput = (e)=>{
 
 const registerSubmit = async (e)=>{
     e.preventDefault();
-    
+
     try {
-      
+
     const res = await axios.post(`/user/register`, {
-    
+
      username:user.username,
     email:user.email,
     password:user.password
-    
+
     })
-    
+
     setUser({username:'',email:'', password:''});
-    
+
     setErr(res.data.msg);
-    
-    
-    
+
+
+
     } catch (err) {
         err.response.data.msg && setErr(err.response.data.msg)
     }
@@ -53,13 +49,13 @@ const registerSubmit = async (e)=>{
     return (
         <div className="login">
           <div className="main-container">
-              <h3>Register new admin</h3></div>  
+              <h3>Register new admin</h3></div>
               <div className="login-center">
          <form onSubmit={registerSubmit}>
              <p>{err}</p>
 
             <label htmlFor="name">Name</label>
-            <input type="text" 
+            <input type="text"
             placeholder="import name..."
              name="username"
              value={user.username}
@@ -77,8 +73,8 @@ const registerSubmit = async (e)=>{
             />
 
           <label htmlFor="password">Password</label>
-            <input type="password" 
-            placeholder="import password..." 
+            <input type="password"
+            placeholder="import password..."
             name="password"
             value={user.password}
             onChange={onchangeInput}

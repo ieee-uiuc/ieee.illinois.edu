@@ -1,7 +1,7 @@
 @import "../../colors.scss";
 
 .nav-container {
-    background-color: $darkest;
+    background-color: rgba(20,20,20,1);
     position: -webkit-sticky;
     position: sticky;
     top:0;
@@ -39,7 +39,7 @@ nav {
 .bar1,
 .bar2,
 .bar3 {
-    background-color: $light;
+    background-color: white;
     width: 35px;
     padding: 1px;
     margin: 5px;
@@ -48,7 +48,6 @@ nav {
 
 .animateBar.bar1 {
     transform: rotate(-45deg) translate(-5px, 5px);
-    background: $lightest;
     width: 30px;
 }
 
@@ -58,7 +57,6 @@ nav {
 
 .animateBar.bar3 {
     transform: rotate(45deg) translate(-4px, -5px);
-    background: $lightest;
     width: 30px;
 }
 
@@ -74,7 +72,8 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    background: $darkest;
+    background: rgba(20,20,20,1);
+
     z-index: 10;
     opacity: 1;
     transition: transform 0.4s ease-in-out;
@@ -94,7 +93,7 @@ nav {
 .links li a {
     display: block;
     padding: 10px;
-    color: $light;
+    color: white;
     transition: all 0.3s ease-in-out;
     font-size: 18px;
 }
@@ -136,7 +135,7 @@ nav {
         top: auto;
         transform: translateX(0%);
     }
-    
+
     .new-links {
         width: 100%;
         transform: translateX(0%);

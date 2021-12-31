@@ -39,7 +39,7 @@ app.use('/user', require('./routes/userRoute'))
 app.use('/', require('./routes/aboutRoute'));
 app.use('/', require('./routes/socialRoute'));
 app.use('/', require('./routes/boardRoute'));
-app.use('/', require('./routes/technicalRoute'));
+app.use('/', require('./routes/eventRoute'));
 app.use('/', require('./routes/upload'));
 
 PORT = process.env.PORT || 5000;

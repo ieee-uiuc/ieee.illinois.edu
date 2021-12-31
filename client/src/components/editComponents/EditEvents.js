@@ -7,12 +7,14 @@ const initialState = {
     product_id: '',
     title: '',
     description: '',
-    date: ''
+    date: '',
+    location: '',
+    upcoming: false
 }
 
-const EditTechnical = (props) => {
+const EditEvent = (props) => {
 
-    const [technical, setTechnicals] = useState(initialState)
+    const [event, setEvents] = useState(initialState)
     const [images, setImages] = useState(false)
     const [message, setMessage] = useState('')
     const history = useHistory()
@@ -65,19 +67,21 @@ const EditTechnical = (props) => {
 
         const { name, value } = e.target
 
-        setTechnicals({ ...technical, [name]: value })
+        setEvents({ ...event, [name]: value })
     }
 
     //getting data
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`/technical/${props.match.params.id}`)
-                setTechnicals({
+                const res = await axios.get(`/event/${props.match.params.id}`)
+                setEvents({
                     product_id: res.data.product_id,
                     date: res.data.date,
                     title: res.data.title,
-                    description: res.data.description
+                    description: res.data.description,
+                    location: res.data.location,
+                    upcoming: res.data.upcoming
                 })
             } catch (error) {
                 console.log(error);
@@ -90,7 +94,7 @@ const EditTechnical = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`/technical/update/${props.match.params.id}`, { ...technical, images })
+            const res = await axios.put(`/event/update/${props.match.params.id}`, { ...event, images })
             setMessage(res.data.msg)
 
             setImages(false)
@@ -113,13 +117,13 @@ const EditTechnical = (props) => {
                     <div className="same-form">
                         <form onSubmit={handleSubmit}>
                             <h3 className="updated">{message}</h3>
-                            <h4>Technical components</h4>
+                            <h4>Event components</h4>
                             <label htmlFor="text">Id</label>
                             <input
                                 type="text"
                                 name="product_id"
                                 required id="product_id"
-                                value={technical.product_id}
+                                value={event.product_id}
                                 onChange={handleChangeInput}
                             />
 
@@ -128,22 +132,46 @@ const EditTechnical = (props) => {
                                 type="text"
                                 name="title"
                                 required
-                                value={technical.title}
+                                value={event.title}
                                 onChange={handleChangeInput}
-                                id="title" />
+                                id="title"
+                            />
+
+
                             <label htmlFor="text">date</label>
                             <input
                                 type="text"
                                 name="date"
                                 required
-                                value={technical.date}
+                                value={event.date}
                                 onChange={handleChangeInput}
-                                id="date" />
+                                id="date"
+                            />
+
+                            <label htmlFor="text">location</label>
+                            <input
+                                type="text"
+                                name="location"
+                                required
+                                value={event.location}
+                                onChange={handleChangeInput}
+                                id="location"
+                            />
+
+                            <label htmlFor="text">upcoming</label>
+                            <input
+                                type="text"
+                                name="upcoming"
+                                required
+                                value={event.upcoming}
+                                onChange={handleChangeInput}
+                                id="upcoming"
+                            />
 
                             <label htmlFor="text">Description</label>
                             <textarea type="text"
                                 name="description"
-                                value={technical.description}
+                                value={event.description}
                                 onChange={handleChangeInput}
                                 required id="description" cols="30" rows="3" />
 
@@ -173,4 +201,4 @@ const EditTechnical = (props) => {
     )
 }
 
-export default EditTechnical
+export default EditEvent
