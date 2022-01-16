@@ -24,6 +24,7 @@
     position: relative;
     width: 100%;
     min-height: 25em;
+    height: 55vh;
     transition: ease-in-out 1s;
     cursor: pointer;
     border: 1px $black solid;
@@ -183,5 +184,8 @@
     .card {
         width: 90vw;
         height: 95vh;
+    }
+    .single-event{
+        height: 35em;
     }
 }
