@@ -37,27 +37,27 @@ const PastEvents = () => {
             <div className='container-event-title'>
                 <h1 className='event-page-title' >Past Events:</h1>
             </div>
-            <Carousel
-                swipeable={true}
-                draggable={true}
-                responsive={responsive}
-                customTransition="transform 400ms ease-in-out"
-                transitionDuration={300}
-                infinite={true}
-                minimumTouchDrag={50}
-                // autoPlay={true}
-                overflow={true}
-            // centerMode={true}
-            // showDots={true}
-            // renderDotsOutside={true}
-            >
-                {dataEvents && <Event key={'loading...'} image={'loading...'} title={'loading...'} date={'loading...'} description={'loading...'} location={'loading...'} />}
-                {/* {!dataEvents && <div> */}
+
+            {dataEvents ? <Event key={'loading...'} image={'loading...'} title={'loading...'} date={'loading...'} description={'loading...'} location={'loading...'} />
+                : <Carousel
+                    // swipeable={true}
+                    // draggable={true}
+                    responsive={responsive}
+                    customTransition="transform 400ms ease-in-out"
+                    transitionDuration={300}
+                    infinite={true}
+                    minimumTouchDrag={50}
+                    autoPlay={true}
+                    overflow={true}
+                    // centerMode={true}
+                    showDots={true}
+                    renderDotsOutside={true}
+                >
                     {events.map((item) => (
                         !item.upcoming && <Event key={item.id} image={item.images.url} title={item.title} date={item.date} description={item.description} location={item.location} />
                     ))}
-                {/* </div>} */}
-            </Carousel >
+                </Carousel >
+            }
         </div>
     )
 }

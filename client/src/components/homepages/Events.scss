@@ -24,7 +24,6 @@
     position: relative;
     width: 100%;
     min-height: 25em;
-    height: 55vh;
     transition: ease-in-out 1s;
     cursor: pointer;
     border: 1px $black solid;
@@ -113,6 +112,7 @@
     z-index: 5;
     overflow-y: scroll;
     overflow-x: hidden;
+    word-wrap: break-word;
     &__background {
         position: absolute;
         width: 120%;
@@ -129,18 +129,22 @@
     &__title {
         position: relative;
         font-size: 4.5em;
-        margin-top: .35em;
+        margin-top: 0.35em;
         font-weight: 700;
+        padding: 0 2vw;
     }
     &__date {
         position: relative;
-        margin-top: .05em;
+        margin-top: 0.05em;
         font-size: 1.15em;
+        padding: 0 1vw;
     }
     &__location {
         position: relative;
         margin-top: 0.1em;
         font-size: 1.15em;
+        padding: 0 1vw;
+
     }
     &__image img {
         position: relative;
@@ -154,7 +158,9 @@
         font-size: 1.35em;
         font-weight: 500;
         max-width: 75%;
-        margin-top: .5em;
+        margin-top: 0.5em;
+        padding: 0 .5vw;
+
     }
     &__button {
         position: fixed;
@@ -171,5 +177,11 @@
         outline: inherit;
         font-size: 2em;
         font-weight: bold;
+    }
+}
+@media screen and (max-width: 800px) {
+    .card {
+        width: 90vw;
+        height: 95vh;
     }
 }
