@@ -96,7 +96,7 @@ form button:hover {
     margin-top: 10px;
 }
 
-.events-admin .single-event {
+.contents-admin .single-content {
     margin-top: 10px;
 }
 
@@ -160,7 +160,7 @@ socialls-admin .single-social-img img {
     height: 100%;
 }
 
-@media screen and (min-width: 574px) { 
+@media screen and (min-width: 574px) {
     .socials-admin .single-social-img {
         width: 100%;
         height: 350px;
@@ -210,62 +210,62 @@ socialls-admin .single-social-img img {
     }
 }
 
-/* events */
-.events-admin .single-event-img {
-    width: 100%;
+/* contents */
+.contents-admin .single-content-img {
+    width: auto;
     height: 300px;
 }
 
-.events-admin .single-event-img img {
+.contents-admin .single-content-img img {
     width: 100%;
     height: 100%;
 }
 
 @media screen and (min-width: 574px) {
-    .events-admin .single-event-img {
+    .contents-admin .single-content-img {
         width: 100%;
         height: 350px;
     }
 
-    .events-admin .single-event-img img {
+    .contents-admin .single-content-img img {
         width: 100%;
         height: 100%;
     }
 }
 
 @media screen and (min-width: 664px) {
-    .events-admin .single-event {
+    .contents-admin .single-content {
         display: block;
     }
 
-    .events-admin .single-event-img {
+    .contents-admin .single-content-img {
         width: 275px;
         height: 180px;
     }
 
-    .events-admin .single-event-img img {
+    .contents-admin .single-content-img img {
         width: 100%;
         height: 100%;
     }
 
-    .single-event-info {
+    .single-content-info {
         flex: 1;
         color: black;
     }
 }
 
 @media screen and (min-width: 664px) {
-    .events-admin .single-event-img {
+    .contents-admin .single-content-img {
         width: 150px;
         height: 150px;
     }
 
-    .events-admin .single-event-img img {
+    .contents-admin .single-content-img img {
         width: 150px;
         height: 100%;
     }
 
-    .events-admin .single-event {
+    .contents-admin .single-content {
         display: flex;
         justify-content: space-between;
     }

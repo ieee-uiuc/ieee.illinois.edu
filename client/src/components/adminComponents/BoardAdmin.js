@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import './Admin.scss'
 
 const initialState = {
     product_id: '',
@@ -196,17 +197,17 @@ const BoardsAdmin = () => {
             <div className="same-item">
                 <div className="about-info">
                     {boardData.map((item) => (
-                        <div className="events-admin" key={item._id}>
+                        <div className="contents-admin" key={item._id}>
                             <div className="icons">
                                 <Link to={`/editBoard/${item._id}`}><i className="fas fa-edit"></i></Link>
                                 <i className="fas fa-trash" onClick={() => deleteBoard(item._id)}></i>
                             </div>
 
-                            <div className="single-event">
-                                <div className="single-event-img">
+                            <div className="single-content">
+                                <div className="single-content-img">
                                     <img src={item.images.url} alt="" />
                                 </div>
-                                <div className="single-event-info">
+                                <div className="single-content-info">
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
                                     <i>{item.name}</i>

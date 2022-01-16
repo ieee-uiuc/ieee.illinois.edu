@@ -11,7 +11,7 @@ exports.getEvent = async (req, res) => {
 }
 
 exports.addEvent = async (req, res) => {
-    const { title, product_id, date, description, images, location, upcoming } = req.body;
+    const { title, product_id, date, description, location, upcoming, images } = req.body;
 
     try {
         const event = new eventSchema({
@@ -19,9 +19,9 @@ exports.addEvent = async (req, res) => {
             product_id,
             description,
             date,
-            images,
             location,
-            upcoming
+            upcoming,
+            images
         })
         await event.save();
         res.json({msg:"product added"});
@@ -41,7 +41,7 @@ exports.getEventID = async (req, res) => {
 }
 
 exports.updateEvent = async (req, res) => {
-    const { title, product_id, description, images, location, upcoming } = req.body;
+    const { title, product_id, description, date, images, location, upcoming } = req.body;
 
     try {
         const event = await eventSchema.findByIdAndUpdate(req.params.id, {

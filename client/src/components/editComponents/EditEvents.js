@@ -9,7 +9,7 @@ const initialState = {
     description: '',
     date: '',
     location: '',
-    upcoming: false
+    upcoming: null
 }
 
 const EditEvent = (props) => {
@@ -47,7 +47,7 @@ const EditEvent = (props) => {
 
 
         } catch (err) {
-            console.log(err.response.data.msg);
+            console.log(err);
         }
 
     }
@@ -77,9 +77,9 @@ const EditEvent = (props) => {
                 const res = await axios.get(`/event/${props.match.params.id}`)
                 setEvents({
                     product_id: res.data.product_id,
-                    date: res.data.date,
                     title: res.data.title,
                     description: res.data.description,
+                    date: res.data.date,
                     location: res.data.location,
                     upcoming: res.data.upcoming
                 })

@@ -216,17 +216,17 @@ const EventsAdmin = () => {
             <div className="same-item">
                 <div className="about-info">
                     {eventData.map((item) => (
-                        <div className="events-admin" key={item._id}>
+                        <div className="contents-admin" key={item._id}>
                             <div className="icons">
                                 <Link to={`/editEvent/${item._id}`}><i className="fas fa-edit"></i></Link>
                                 <i className="fas fa-trash" onClick={() => deleteEvent(item._id)}></i>
                             </div>
 
-                            <div className="single-event">
-                                <div className="single-event-img">
+                            <div className="single-content">
+                                <div className="single-content-img">
                                     <img src={item.images.url} alt="" />
                                 </div>
-                                <div className="single-event-info">
+                                <div className="single-content-info">
                                     <h3>title:{item.title}</h3>
                                     <p>description:{item.description}</p>
                                     <i>date:{item.date}</i><br />

@@ -31,6 +31,7 @@ const UpcomingEvents = () => {
         }
     };
 
+
     return (
         <div>
             <div className='container-event-title'>
@@ -44,18 +45,18 @@ const UpcomingEvents = () => {
                 transitionDuration={300}
                 infinite={true}
                 minimumTouchDrag={50}
-                // autoPlay={true}
+                autoPlay={true}
                 overflow={true}
             // centerMode={true}
             // showDots={true}
             // renderDotsOutside={true}
             >
                 {dataEvents && <Event key={'loading...'} image={'loading...'} title={'loading...'} date={'loading...'} description={'loading...'} location={'loading...'} />}
-                {!dataEvents && <div>
+                {/* {!dataEvents && <div> */}
                     {events.map((item) => (
                         item.upcoming && <Event key={item.id} image={item.images.url} title={item.title} date={item.date} description={item.description} location={item.location} />
                     ))}
-                </div>}
+                {/* </div>} */}
             </Carousel >
         </div>
     )
