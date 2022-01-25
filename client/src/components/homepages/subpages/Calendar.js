@@ -16,10 +16,10 @@ export default class Calendar extends Component {
 
     render() {
         let INITIAL_EVENTS = [
-            {
-                googleCalendarId: '4na3juef6r10antnbtmniav7nc@group.calendar.google.com',
-                className:'event'
-            }
+          {
+            googleCalendarId: process.env.REACT_APP_GOOGLE_CALENDAR,
+            className: "event",
+          },
         ]
         return (
             <div className="calendar">
