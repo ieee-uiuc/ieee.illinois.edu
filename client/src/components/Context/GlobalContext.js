@@ -47,27 +47,39 @@ export const DataProvider = ({ children }) => {
 
     const fetchData = async () => {
         // ...for fetchning about...
-        const res1 = await axios.get(`/fetchabout`);
-        //console.log(res1.data);
-        setAbout(res1.data);
+        const about = await axios.get(`/fetchabout`);
+        //console.log(about.data);
+        about.data.sort(function (a, b) {
+          return a.product_id - b.product_id
+        })
+        setAbout(about.data);
         setDataAbout(false)
 
         // ...for fetchning social...
         const social = await axios.get(`/Social`);
         // console.log(res2.data);
+        social.data.sort(function (a, b) {
+          return a.product_id - b.product_id
+        })
         setSocial(social.data);
         setDataSocial(false)
 
         // ...for fetchning board...
-        const res3 = await axios.get(`/fetchboard`);
-        // console.log(res3.data);
-        setBoard(res3.data);
+        const board = await axios.get(`/fetchboard`);
+        // console.log(board.data);
+        board.data.sort(function (a, b) {
+          return a.product_id - b.product_id
+        })
+        setBoard(board.data);
         setDataBoard(false)
 
         // ...for fetching events
-        const res4 = await axios.get(`/event`);
-        // console.log(res4.data);
-        setEvents(res4.data);
+        const event = await axios.get(`/event`);
+        // console.log(event.data);
+        event.data.sort(function (a, b) {
+          return a.product_id - b.product_id
+        })
+        setEvents(event.data);
         setDataEvents(false)
     }
 
