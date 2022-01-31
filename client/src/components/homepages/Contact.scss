@@ -1,84 +1,84 @@
 @import "../../colors";
 
 .contact {
-    padding: 2em 0;
-    &__title {
-        text-align: center;
-        color: black;
-        font-size: 5em;
-        font-weight: 700;
-    }
-    &__container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        border-radius: 1em;
-        &__form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1em 2em;
+  padding: 2em 0;
+  &__title {
+    text-align: center;
+    color: black;
+    font-size: 5em;
+    font-weight: 700;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 1em;
+    &__form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em 2em;
 
-            &__content {
-            }
-        }
-        &__info {
-            padding: 2em;
-            &__title {
-                color: black;
-                font-size: 1.25em;
-                font-weight: 700;
-                &__social {
-                    color: black;
-                    font-size: 1.25em;
-                    font-weight: 600;
-                }
-            }
-            &__text {
-                color: black;
-                font-weight: 500;
-            }
-        }
+      &__content {
+      }
     }
-    &__name {
-        width: 15em;
-    }
-    &__email {
-        width: 15em;
-    }
-    &__message {
-        width: 15em;
-    }
-    &__lable {
+    &__info {
+      padding: 2em;
+      &__title {
         color: black;
+        font-size: 1.25em;
+        font-weight: 700;
+        &__advertising {
+          color: black;
+          font-size: 1.25em;
+          font-weight: 600;
+        }
+      }
+      &__text {
+        color: black;
+        font-weight: 500;
+      }
     }
+  }
+  &__name {
+    width: 15em;
+  }
+  &__email {
+    width: 15em;
+  }
+  &__message {
+    width: 15em;
+  }
+  &__lable {
+    color: black;
+  }
 }
 .contact-media {
 }
 .fab {
-    padding: 0.1em;
-    font-size: 1.25em;
-    text-align: center;
-    text-decoration: none;
-    margin: 0.35em 0.5em;
+  padding: 0.1em;
+  font-size: 1.25em;
+  text-align: center;
+  text-decoration: none;
+  margin: 0.35em 0.5em;
 }
 
 .fab:hover {
-    opacity: 0.65;
+  opacity: 0.65;
 }
 
 .fa-facebook {
-    z-index: 1;
-    color: black;
+  z-index: 1;
+  color: black;
 }
 
 .fa-github {
-    color: black;
+  color: black;
 }
 .fa-instagram {
-    color: black;
+  color: black;
 }
 .fa-discord {
-    color: black;
+  color: black;
 }
