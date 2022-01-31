@@ -4,6 +4,7 @@
     min-height: $pageHeight;
     &__container {
         margin: 1em 4em 0em 4em;
+        color: black;
     }
     @media screen and (max-width: 800px) {
         &__container {

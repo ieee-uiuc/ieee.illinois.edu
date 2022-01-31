@@ -1,57 +1,65 @@
-import React, { Component } from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
-import scrollGridPlugin from '@fullcalendar/scrollgrid'
-import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import interactionPlugin from "@fullcalendar/interaction";
-import './Calendar.scss'
+import React, { Component } from "react"
+import FullCalendar from "@fullcalendar/react"
+import dayGridPlugin from "@fullcalendar/daygrid"
+import timeGridPlugin from "@fullcalendar/timegrid"
+import scrollGridPlugin from "@fullcalendar/scrollgrid"
+import googleCalendarPlugin from "@fullcalendar/google-calendar"
+import "./Calendar.scss"
 
-require('dotenv').config()
+require("dotenv").config()
 
 const API = process.env.REACT_APP_GOOGLE_API_KEY
 
 export default class Calendar extends Component {
-
-
-    render() {
-        let INITIAL_EVENTS = [
-          {
-            googleCalendarId: process.env.REACT_APP_GOOGLE_CALENDAR,
-            className: "event",
-          },
-        ]
-        return (
-            <div className="calendar">
-                <div className="calendar__container">
-                    <FullCalendar
-                        plugins={[dayGridPlugin, googleCalendarPlugin, timeGridPlugin, scrollGridPlugin, interactionPlugin]}
-                        initialView="timeGridWeek"
-                        googleCalendarApiKey={API}
-                        eventSources={INITIAL_EVENTS}
-                        allDaySlot={false}
-                        height='80vh'
-                        expandRows={true}
-                        headerToolbar={{
-                            left: "today timeGridDay,timeGridWeek,dayGridMonth",
-                            center: "title",
-                            right: "prev,next"
-                        }}
-                        // veiws={
-                        //     dayGridMonth={
-                        //         dayMinWidth:5
-                        //     }
-                        // }
-                        slotMinTime="10:00:00"
-                        slotMaxTime="20:00:00"
-                        dayMinWidth={200}
-                        stickyFooterScrollbar={true}
-                        eventColor= '#0F3D59'
-                        eventBackgroundColor= '#0F3D59'
-                        progressiveEventRendering='true'
-                    />
-                </div>
-            </div>
-        )
-    }
+  render() {
+    let INITIAL_EVENTS = [
+      {
+        googleCalendarId: process.env.REACT_APP_GOOGLE_CALENDAR,
+      },
+    ]
+    return (
+      <div className="calendar">
+        <div className="calendar__container">
+          <FullCalendar
+            plugins={[
+              dayGridPlugin,
+              googleCalendarPlugin,
+              timeGridPlugin,
+              scrollGridPlugin,
+            ]}
+            initialView="timeGridWeek"
+            googleCalendarApiKey={API}
+            eventSources={INITIAL_EVENTS}
+            allDaySlot={false}
+            height="80vh"
+            expandRows={true}
+            headerToolbar={{
+              start: "",
+              center: "title",
+              end: "today",
+            }}
+            footerToolbar={{
+              start: "timeGridDay timeGridWeek dayGridMonth",
+              end: "prev,next",
+            }}
+            slotMinTime="10:00:00"
+            slotMaxTime="22:00:00"
+            dayMinWidth={10}
+            stickyFooterScrollbar={true}
+            eventColor="#0F3D59"
+            eventBackgroundColor="#0F3D59"
+            progressiveEventRendering={true}
+            expandRows={true}
+            eventClick={function (info) {
+              var eventObj = info.event
+              alert(
+                `${eventObj.title}: at ${eventObj.start} until ${eventObj.end}`
+              )
+              info.jsEvent.preventDefault()
+            }}
+          />
+        </div>
+      </div>
+    )
+  }
 }
