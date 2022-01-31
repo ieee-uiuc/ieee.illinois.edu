@@ -5,6 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid"
 import scrollGridPlugin from "@fullcalendar/scrollgrid"
 import googleCalendarPlugin from "@fullcalendar/google-calendar"
 import "./Calendar.scss"
+import { Link } from "react-router-dom"
 
 require("dotenv").config()
 
@@ -19,6 +20,16 @@ export default class Calendar extends Component {
     ]
     return (
       <div className="calendar">
+        <div className="cal-text">
+          <h1 className="cal-title">Calendar</h1>
+          <a
+            href="https://calendar.google.com/calendar/u/4?cid=MDM2ODhuMGhtZDl2a2J2MW1wMG9sbGF1ZTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+            target="_blank"
+            className="add-cal"
+          >
+            import calendar
+          </a>
+        </div>
         <div className="calendar__container">
           <FullCalendar
             plugins={[
@@ -34,8 +45,8 @@ export default class Calendar extends Component {
             height="80vh"
             expandRows={true}
             headerToolbar={{
-              start: "",
-              center: "title",
+              start: "title",
+              center: "",
               end: "today",
             }}
             footerToolbar={{

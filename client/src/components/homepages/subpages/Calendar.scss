@@ -1,19 +1,40 @@
 @import "../../../colors";
 
 .calendar {
-    min-height: $pageHeight;
+  min-height: $pageHeight;
+  &__container {
+    margin: 1em 4em 0em 4em;
+    color: black;
+  }
+  @media screen and (max-width: 800px) {
     &__container {
-        margin: 1em 4em 0em 4em;
-        color: black;
+      margin: 3em 1em 0em 1em;
     }
-    @media screen and (max-width: 800px) {
-        &__container {
-            margin: 3em 1em 0em 1em;
-        }
-    }
+  }
 }
 
 .event {
-    padding: 3px 0px;
-    font-weight: 700;
+  padding: 3px 0px;
+  font-weight: 700;
+}
+
+.cal-text {
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+.add-cal {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.cal-title {
+  margin: .25em 0 0 0;
+  font-size: 4em;
+  font-weight: 700;
+}
+
+a[target="_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
 }
