@@ -8,7 +8,7 @@ const About = () => {
 
     const state = useContext(DataContext)
     const [about] = state.about
-    const [dataAbout, setdataAbout] = state.dataAbout
+    const [dataAbout] = state.dataAbout
     // console.log(about)
 
     return (
