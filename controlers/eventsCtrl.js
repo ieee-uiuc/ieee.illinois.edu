@@ -11,7 +11,7 @@ exports.getEvent = async (req, res) => {
 }
 
 exports.addEvent = async (req, res) => {
-    const { title, product_id, date, description, location, upcoming, images } = req.body;
+    const { title, product_id, date, description, location, upcoming, link, linkName, images } = req.body;
 
     try {
         const event = new eventSchema({
@@ -21,6 +21,8 @@ exports.addEvent = async (req, res) => {
             date,
             location,
             upcoming,
+            link,
+            linkName,
             images
         })
         await event.save();
@@ -41,7 +43,7 @@ exports.getEventID = async (req, res) => {
 }
 
 exports.updateEvent = async (req, res) => {
-    const { title, product_id, description, date, images, location, upcoming } = req.body;
+    const { title, product_id, description, date, images, location, upcoming, link, linkName } = req.body;
 
     try {
         const event = await eventSchema.findByIdAndUpdate(req.params.id, {
@@ -51,6 +53,8 @@ exports.updateEvent = async (req, res) => {
             date,
             images,
             location,
+            link,
+            linkName,
             upcoming
         });
 

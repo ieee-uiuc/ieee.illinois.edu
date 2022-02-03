@@ -45,6 +45,8 @@ const PastEvents = () => {
           date={"loading..."}
           description={"loading..."}
           location={"loading..."}
+          link={"loading..."}
+          linkName={"loading..."}
         />
       ) : (
         <Carousel
@@ -73,6 +75,8 @@ const PastEvents = () => {
                   date={item.date}
                   description={item.description}
                   location={item.location}
+                  link={item.link}
+                  linkName={item.linkName}
                 />
               )
           )}

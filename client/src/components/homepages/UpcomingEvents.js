@@ -33,36 +33,57 @@ const UpcomingEvents = () => {
 
 
     return (
-        <div>
-            <div className='container-event-title'>
-                <h1 className='event-page-title' >Upcoming Events:</h1>
-            </div>
-
-            {dataEvents
-                ? <Event key={'loading...'} image={'loading...'} title={'loading...'} date={'loading...'} description={'loading...'} location={'loading...'} />
-
-                : <Carousel
-                    swipeable={true}
-                    draggable={true}
-                    // showThumbs={false}
-                    infiniteLoop={true}
-                    responsive={responsive}
-                    customTransition="transform 400ms ease-in-out"
-                    transitionDuration={300}
-                    infinite={true}
-                    minimumTouchDrag={50}
-                // autoPlay={true}
-                // overflow={true}
-                // centerMode={true}
-                // showDots={true}
-                // renderDotsOutside={true}
-                >
-                    {events.map((item) => (
-                        item.upcoming && <Event key={item.id} image={item.images.url} title={item.title} date={item.date} description={item.description} location={item.location} />
-                    ))}
-                </Carousel >
-            }
+      <div>
+        <div className="container-event-title">
+          <h1 className="event-page-title">Upcoming Events:</h1>
         </div>
+
+        {dataEvents ? (
+          <Event
+            key={"loading..."}
+            image={"loading..."}
+            title={"loading..."}
+            date={"loading..."}
+            description={"loading..."}
+            location={"loading..."}
+            link={"loading..."}
+            linkName={"loading..."}
+          />
+        ) : (
+          <Carousel
+            swipeable={true}
+            draggable={true}
+            // showThumbs={false}
+            infiniteLoop={true}
+            responsive={responsive}
+            customTransition="transform 400ms ease-in-out"
+            transitionDuration={300}
+            infinite={true}
+            minimumTouchDrag={50}
+            // autoPlay={true}
+            // overflow={true}
+            // centerMode={true}
+            // showDots={true}
+            // renderDotsOutside={true}
+          >
+            {events.map(
+              (item) =>
+                item.upcoming && (
+                  <Event
+                    key={item.id}
+                    image={item.images.url}
+                    title={item.title}
+                    date={item.date}
+                    description={item.description}
+                    location={item.location}
+                    link={item.link}
+                    linkName={item.linkName}
+                  />
+                )
+            )}
+          </Carousel>
+        )}
+      </div>
     )
 }
 

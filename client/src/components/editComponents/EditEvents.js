@@ -9,7 +9,9 @@ const initialState = {
     description: '',
     date: '',
     location: '',
-    upcoming: null
+    upcoming: null,
+    link: '',
+    linkName:''
 }
 
 const EditEvent = (props) => {
@@ -76,12 +78,14 @@ const EditEvent = (props) => {
             try {
                 const res = await axios.get(`/event/${props.match.params.id}`)
                 setEvents({
-                    product_id: res.data.product_id,
-                    title: res.data.title,
-                    description: res.data.description,
-                    date: res.data.date,
-                    location: res.data.location,
-                    upcoming: res.data.upcoming
+                  product_id: res.data.product_id,
+                  title: res.data.title,
+                  description: res.data.description,
+                  date: res.data.date,
+                  location: res.data.location,
+                  upcoming: res.data.upcoming,
+                  link: res.data.link,
+                  linkName: res.data.linkName,
                 })
             } catch (error) {
                 console.log(error);
@@ -111,93 +115,121 @@ const EditEvent = (props) => {
     }
 
     return (
-        <div className="edit">
-            <div className="main-container">
-                <div className="same-component">
-                    <div className="same-form">
-                        <form onSubmit={handleSubmit}>
-                            <h3 className="updated">{message}</h3>
-                            <h4>Event components</h4>
-                            <label htmlFor="text">Id</label>
-                            <input
-                                type="text"
-                                name="product_id"
-                                required id="product_id"
-                                value={event.product_id}
-                                onChange={handleChangeInput}
-                            />
+      <div className="edit">
+        <div className="main-container">
+          <div className="same-component">
+            <div className="same-form">
+              <form onSubmit={handleSubmit}>
+                <h3 className="updated">{message}</h3>
+                <h4>Event components</h4>
+                <label htmlFor="text">Id</label>
+                <input
+                  type="text"
+                  name="product_id"
+                  required
+                  id="product_id"
+                  value={event.product_id}
+                  onChange={handleChangeInput}
+                />
 
-                            <label htmlFor="text">title</label>
-                            <input
-                                type="text"
-                                name="title"
-                                required
-                                value={event.title}
-                                onChange={handleChangeInput}
-                                id="title"
-                            />
+                <label htmlFor="text">title</label>
+                <input
+                  type="text"
+                  name="title"
+                  required
+                  value={event.title}
+                  onChange={handleChangeInput}
+                  id="title"
+                />
 
+                <label htmlFor="text">date</label>
+                <input
+                  type="text"
+                  name="date"
+                  required
+                  value={event.date}
+                  onChange={handleChangeInput}
+                  id="date"
+                />
 
-                            <label htmlFor="text">date</label>
-                            <input
-                                type="text"
-                                name="date"
-                                required
-                                value={event.date}
-                                onChange={handleChangeInput}
-                                id="date"
-                            />
+                <label htmlFor="text">location</label>
+                <input
+                  type="text"
+                  name="location"
+                  required
+                  value={event.location}
+                  onChange={handleChangeInput}
+                  id="location"
+                />
 
-                            <label htmlFor="text">location</label>
-                            <input
-                                type="text"
-                                name="location"
-                                required
-                                value={event.location}
-                                onChange={handleChangeInput}
-                                id="location"
-                            />
+                <label htmlFor="text">upcoming</label>
+                <input
+                  type="text"
+                  name="upcoming"
+                  required
+                  value={event.upcoming}
+                  onChange={handleChangeInput}
+                  id="upcoming"
+                />
 
-                            <label htmlFor="text">upcoming</label>
-                            <input
-                                type="text"
-                                name="upcoming"
-                                required
-                                value={event.upcoming}
-                                onChange={handleChangeInput}
-                                id="upcoming"
-                            />
+                <label htmlFor="text">link</label>
+                <input
+                  type="text"
+                  name="link"
+                  required
+                  value={event.link}
+                  onChange={handleChangeInput}
+                  id="link"
+                />
 
-                            <label htmlFor="text">Description</label>
-                            <textarea type="text"
-                                name="description"
-                                value={event.description}
-                                onChange={handleChangeInput}
-                                required id="description" cols="30" rows="3" />
+                <label htmlFor="text">linkName</label>
+                <input
+                  type="text"
+                  name="linkName"
+                  required
+                  value={event.linkName}
+                  onChange={handleChangeInput}
+                  id="linkName"
+                />
 
-                            <div className="upload" >
-                                <input type="file"
-                                    name="file"
-                                    id="file_up"
-                                    onChange={handleUpload}
-                                    required
-                                />
-                                <div id="file_img" className="file_img" style={styleUpload}>
-                                    <img src={images ? images.url : ''} alt="" />
-                                    <span onClick={handleDestroy}><p>X</p></span>
+                <label htmlFor="text">Description</label>
+                <textarea
+                  type="text"
+                  name="description"
+                  value={event.description}
+                  onChange={handleChangeInput}
+                  required
+                  id="description"
+                  cols="30"
+                  rows="3"
+                />
 
-                                </div>
-
-                            </div>
-                            <div className="btns">
-                                <button>Update item</button>
-                                <Link to="/admin"><button className="cancel-btn">Cancel</button></Link>
-                            </div>
-                        </form>
-                    </div>
+                <div className="upload">
+                  <input
+                    type="file"
+                    name="file"
+                    id="file_up"
+                    onChange={handleUpload}
+                    required
+                  />
+                  <div id="file_img" className="file_img" style={styleUpload}>
+                    <img src={images ? images.url : ""} alt="" />
+                    <span onClick={handleDestroy}>
+                      <p>X</p>
+                    </span>
+                  </div>
                 </div>
+                <div className="btns">
+                  <button>Update item</button>
+                  <Link to="/admin">
+                    <button className="cancel-btn">Cancel</button>
+                  </Link>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     )
 }
 
