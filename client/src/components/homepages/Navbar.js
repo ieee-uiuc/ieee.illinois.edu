@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../../images/logo.png';
 import { DataContext } from '../Context/GlobalContext';
 import { scroller } from 'react-scroll';
+import { ClickHandler } from './functions/ClickHandler'
 
 
 
@@ -67,7 +68,7 @@ const Navbar = () => {
                         {/* <li onClick={() => scrollToElement('Board')}><Link to="/">Events</Link></li> */}
                         {/* <li onClick={() => scrollToElement('PastEvents')}><Link to="/">previous</Link></li> */}
                         <li onClick={() => scrollToElement('Contact')}><Link to="/">Contact</Link></li>
-                        <li><Link to="/Calendar">Calendar</Link></li>
+                        <li><Link onClick={ClickHandler('calendar','navbar')} to="/Calendar">Calendar</Link></li>
                         <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/admin':'/'}>{isLogin?<div className="admin">Admin</div>:''}</Link></li>
                         <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/register':'/'}>{isLogin?<div className="admin">Register</div>:''}</Link></li>
                         <li onClick={logOutSubmit}> <Link to={isLogin?'/':'/login'}>{isLogin?"logout":"login"}</Link></li>

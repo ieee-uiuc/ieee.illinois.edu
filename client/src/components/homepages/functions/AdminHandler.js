@@ -11,6 +11,6 @@ export function AdminClickHandler(feild, section) {
 export function UserLogin(feild, section) {
   ReactGa.event({
     category: "Admin login!",
-    action: `An admin has Logedin`,
+    action: `An admin has Logged in`,
   })
 }
