@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Edit.scss'
 import axios from 'axios'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 const initialState = {
-    product_id: '',
-    title: '',
-    description: '',
-    date: '',
-    location: '',
-    upcoming: null,
-    link: '',
-    linkName:''
+  product_id: "",
+  title: "",
+  description: "",
+  date: "",
+  location: "",
+  upcoming: null,
+  link: "",
+  linkName: "",
+  image:"",
 }
 
 const EditEvent = (props) => {
@@ -86,6 +88,7 @@ const EditEvent = (props) => {
                   upcoming: res.data.upcoming,
                   link: res.data.link,
                   linkName: res.data.linkName,
+                  image: res.data.image,
                 })
             } catch (error) {
                 console.log(error);
@@ -101,7 +104,8 @@ const EditEvent = (props) => {
             const res = await axios.put(`/event/update/${props.match.params.id}`, { ...event, images })
             setMessage(res.data.msg)
 
-            setImages(false)
+          setImages(false)
+          AdminClickHandler("updated", "events")
         } catch (error) {
             console.log(error)
         }
@@ -116,6 +120,7 @@ const EditEvent = (props) => {
 
     return (
       <div className="edit">
+
         <div className="main-container">
           <div className="same-component">
             <div className="same-form">

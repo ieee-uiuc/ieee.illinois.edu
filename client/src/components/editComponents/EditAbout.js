@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Edit.scss'
 import axios from 'axios'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 const EditAbout = (props) => {
 
@@ -36,6 +37,7 @@ const EditAbout = (props) => {
         try {
             const res = await axios.put(`/fetchabout/update/${props.match.params.id}`, { about })
             setMessage(`${res.data.msg}`)
+            AdminClickHandler("updated", "about")
         } catch (error) {
             console.log(error)
         }

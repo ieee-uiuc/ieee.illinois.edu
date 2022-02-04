@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 import "./Edit.scss"
 import axios from "axios"
+import { AdminClickHandler } from "../homepages/functions/AdminHandler"
 
 const initialState = {
   product_id: "",
@@ -91,6 +92,7 @@ const EditAdvertising = (props) => {
       setMessage(res.data.msg)
 
       setImages(false)
+      AdminClickHandler("updated", "Advertising")
     } catch (error) {
       console.log(error)
     }

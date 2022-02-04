@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 const initialState = {
     product_id: '',
@@ -87,7 +88,9 @@ const EventsAdmin = () => {
                 setMessage('')
             }, 2000)
             setEvent(initialState)
-            setImages(false)
+          setImages(false)
+          AdminClickHandler("added", "events")
+
         } catch (error) {
             console.log(error)
         }
@@ -129,6 +132,7 @@ const EventsAdmin = () => {
                 setMessage('')
                 setMessageCond(false)
             }, 2000)
+          AdminClickHandler("deleted", "events")
         } catch (error) {
 
         }

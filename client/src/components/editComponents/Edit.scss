@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    columns: black;
 }
 
 .cancel-btn{
@@ -52,7 +53,7 @@
 }
 
 .edit .upload input{
-   align-self: flex-start; 
+   align-self: flex-start;
    width: 200px;
 }
 

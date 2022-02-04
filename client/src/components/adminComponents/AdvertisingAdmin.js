@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { AdminClickHandler } from "../homepages/functions/AdminHandler"
 
 const initialState = {
   product_id: "",
@@ -71,6 +72,7 @@ const AdvertisingsAdmin = () => {
     try {
       const res = await axios.post("/advertising", { ...advertising, images })
       setMessage(res.data.msg)
+      AdminClickHandler("added", "Advertising")
       setTimeout(() => {
         setMessage("")
       }, 2000)
@@ -111,6 +113,7 @@ const AdvertisingsAdmin = () => {
       const res = await axios.delete(`/advertising/${id}`)
       setMessageCond(true)
       setMessage(res.data.msg)
+      AdminClickHandler("deleted", "Advertising")
       setTimeout(() => {
         setMessage("")
         setMessageCond(false)

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Admin.scss'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 const initialState = {
     product_id: '',
@@ -84,6 +85,7 @@ const BoardsAdmin = () => {
             }, 2000)
             setBoard(initialState)
             setImages(false)
+            AdminClickHandler("added", "Baord")
         } catch (error) {
             console.log(error)
         }
@@ -121,6 +123,7 @@ const BoardsAdmin = () => {
             const res = await axios.delete(`/fetchboard/${id}`)
             setMessageCond(true)
             setMessage(res.data.msg)
+            AdminClickHandler("deleted", "board")
             setTimeout(() => {
                 setMessage('')
                 setMessageCond(false)

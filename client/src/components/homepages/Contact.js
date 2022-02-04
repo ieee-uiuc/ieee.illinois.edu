@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./Contact.scss"
 import axios from "axios"
 // import Load from '../../images/load2.gif'
+import { ClickHandler } from "./functions/ClickHandler"
 
 const Contact = () => {
   const [name, setName] = useState("")
@@ -109,21 +110,25 @@ const Contact = () => {
           </p>
           <div className="contact-media">
             <a
+              onClick={ClickHandler("github", "contact")}
               href="https://github.com/ieee-uiuc"
               alt="github"
               className="fab fa-github"
             ></a>
             <a
+              onClick={ClickHandler("facebook", "contact")}
               href="https://www.facebook.com/ieeeuiuc"
               alt="facebook"
               className="fab fa-facebook"
             ></a>
             <a
+              onClick={ClickHandler("github", "contact")}
               href="https://www.instagram.com/ieee.uiuc/"
               alt="instagram"
               className="fab fa-instagram"
             ></a>
             <a
+              onClick={ClickHandler("discord", "contact")}
               href="https://discord.gg/Gc9qPBxzbS"
               alt="discord"
               className="fab fa-discord"

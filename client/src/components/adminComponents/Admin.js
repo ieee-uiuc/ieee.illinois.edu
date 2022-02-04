@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "./Admin.scss"
 import AboutAdmin from "./AboutAdmin"
 import AdvertisingAdmin from "./AdvertisingAdmin"
 import BoardAdmin from "./BoardAdmin"
 import EventsAdmin from "./EventsAdmin"
+import { UserLogin } from "../homepages/functions/AdminHandler"
 
 const Admin = () => {
+  useEffect(() => {
+    UserLogin()
+  }, [])
+
   return (
     <div>
       <div className="main-container">

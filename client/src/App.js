@@ -1,5 +1,5 @@
 import "./App.scss"
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import Navbar from "./components/homepages/Navbar"
 import About from "./components/homepages/About"
 import PastEvents from "./components/homepages/PastEvents"
@@ -27,7 +27,18 @@ import { Element } from "react-scroll"
 import { DataContext } from "./components/Context/GlobalContext"
 import FadeIn from "./FadeIn"
 
+import ReactGA from "react-ga"
+
+require("dotenv").config()
+const TRACKING_ID = process.env.REACT_APP_GOOGLE_TRACKING_ID // YOUR_OWN_TRACKING_ID
+
 function App() {
+  // ReactGA.initialize(TRACKING_ID)
+  useEffect(() => {
+    ReactGA.initialize(TRACKING_ID)
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   const state = useContext(DataContext)
   const [isLogin, setIsLogin] = state.isLogin
 

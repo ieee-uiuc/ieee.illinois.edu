@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
 import './Events.scss'
 import Popup from './subpages/Popup'
+import { ClickHandler } from "./functions/ClickHandler"
 
 const Event = (props) => {
 
-    const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  function callTwo() {
+    ClickHandler(`${props.title}`, "events")
+    setIsOpen(!isOpen)
+  }
 
     return (
       <div className="clear">
         <button
           className="single-event"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={callTwo}
           key={props.id}
         >
           <div className="single-event__overlay">

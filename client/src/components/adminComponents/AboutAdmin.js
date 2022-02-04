@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 
 const AboutAdmin = () => {
@@ -35,6 +36,7 @@ const AboutAdmin = () => {
         try {
             const res = await axios.post(`/fetchabout`, { about })
             setMessage(res.data.msg)
+            AdminClickHandler("added", "about")
             setTimeout(() => {
                 setMessage('')
             }, 2000)
@@ -51,6 +53,7 @@ const AboutAdmin = () => {
             const res = await axios.delete(`/fetchabout/${id}`)
             setMessageCond(true)
             setMessage(`${res.data.msg}`)
+            AdminClickHandler("deleted", "about")
             setTimeout(() => {
                 setMessageCond(false)
                 setMessage('')

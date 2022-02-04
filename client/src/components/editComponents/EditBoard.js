@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import './Edit.scss'
 import axios from 'axios'
+import { AdminClickHandler } from '../homepages/functions/AdminHandler'
 
 const initialState = {
     product_id: '',
@@ -94,6 +95,7 @@ const EditBoard = (props) => {
             setMessage(res.data.msg)
 
             setImages(false)
+            AdminClickHandler("updated", "board")
         } catch (error) {
             console.log(error)
         }
