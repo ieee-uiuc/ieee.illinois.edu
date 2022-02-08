@@ -18,6 +18,14 @@ const advertisingSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  link: {
+    type: String,
+    required: true,
+  },
+  linkName: {
+    type: String,
+    required: true,
+  },
   images: {
     type: Object,
     required: true,

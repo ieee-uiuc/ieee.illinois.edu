@@ -31,7 +31,7 @@ const Landing = () => {
                 </div>
                 <i className="landing__content__text__content">
                   Join us for events such as tech talks, info sessions,
-                  luncheons, workshops, and advertisings!
+                  luncheons, workshops, and socials!
                 </i>
                 {/* <div className="button effect">
                             <ul>

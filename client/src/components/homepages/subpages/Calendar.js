@@ -30,7 +30,7 @@ export default class Calendar extends Component {
           </a>
         </div>
         <div className="calendar__container">
-                <FullCalendar
+          <FullCalendar
             plugins={[
               dayGridPlugin,
               googleCalendarPlugin,
@@ -62,7 +62,7 @@ export default class Calendar extends Component {
             eventClick={function (info) {
               var eventObj = info.event
               alert(
-                `${eventObj.title}: at ${eventObj.start} until ${eventObj.end}`
+                `${eventObj.title}: \n${eventObj.start}  -\n${eventObj.end} \n${eventObj.url}`,
               )
               info.jsEvent.preventDefault()
             }}

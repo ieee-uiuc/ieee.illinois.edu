@@ -9,6 +9,8 @@ const initialState = {
   description: "",
   images: "",
   date: "",
+  link: "",
+  linkName:"",
 }
 
 const AdvertisingsAdmin = () => {
@@ -168,6 +170,25 @@ const AdvertisingsAdmin = () => {
             rows="3"
           />
 
+          <label htmlFor="text">Link</label>
+          <input
+            type="text"
+            name="link"
+            id="link"
+            value={advertising.link}
+            onChange={handleChangeInput}
+            required
+          />
+          <label htmlFor="text">Link Name</label>
+          <input
+            type="text"
+            name="linkName"
+            id="linkName"
+            value={advertising.linkName}
+            onChange={handleChangeInput}
+            required
+          />
+
           <div className="upload">
             <input
               type="file"
@@ -210,6 +231,8 @@ const AdvertisingsAdmin = () => {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                   <i>{item.date}</i>
+                  <p>{item.link}</p>
+                  <p>{item.linkName}</p>
                 </div>
               </div>
               <h3

@@ -9,6 +9,8 @@ const initialState = {
   title: "",
   description: "",
   date: "",
+  link: "",
+  linkName:""
 }
 
 const EditAdvertising = (props) => {
@@ -73,6 +75,8 @@ const EditAdvertising = (props) => {
           date: res.data.date,
           title: res.data.title,
           description: res.data.description,
+          link: res.data.link,
+          linkName: res.data.linkName,
         })
       } catch (error) {
         console.log(error)
@@ -152,6 +156,26 @@ const EditAdvertising = (props) => {
                 id="description"
                 cols="30"
                 rows="3"
+              />
+
+              <label htmlFor="text">link</label>
+              <input
+                type="text"
+                name="link"
+                required
+                value={advertising.link}
+                onChange={handleChangeInput}
+                id="link"
+              />
+
+              <label htmlFor="text">linkName</label>
+              <input
+                type="text"
+                name="linkName"
+                required
+                value={advertising.linkName}
+                onChange={handleChangeInput}
+                id="linkName"
               />
 
               <div className="upload">

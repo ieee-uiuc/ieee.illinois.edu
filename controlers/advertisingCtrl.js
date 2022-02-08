@@ -12,7 +12,7 @@ exports.getAdvertising = async (req, res) => {
 
 //add user
 exports.addAdvertising = async (req, res) => {
-  const { title, product_id, date, description, images } = req.body
+  const { title, product_id, date, description, images, link, linkName } = req.body
 
   //first way async await
   try {
@@ -22,6 +22,8 @@ exports.addAdvertising = async (req, res) => {
       date,
       description,
       images,
+      link,
+      linkName
     })
     await newAdvertising.save()
     res.json(newAdvertising)
@@ -57,7 +59,7 @@ exports.getAdvertisingID = async (req, res) => {
 //update user by id
 exports.updateAdvertising = async (req, res) => {
   try {
-    const { title, product_id, date, description, images } = req.body
+    const { title, product_id, date, description, images, link, linkName } = req.body
     const newAdvertising = await advertisingSchema.findByIdAndUpdate(
       req.params.id,
       {
@@ -66,6 +68,8 @@ exports.updateAdvertising = async (req, res) => {
         date,
         description,
         images,
+        link,
+        LinkName
       }
     )
 

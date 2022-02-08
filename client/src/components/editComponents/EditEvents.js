@@ -181,7 +181,6 @@ const EditEvent = (props) => {
                 <input
                   type="text"
                   name="link"
-                  required
                   value={event.link}
                   onChange={handleChangeInput}
                   id="link"
@@ -191,7 +190,6 @@ const EditEvent = (props) => {
                 <input
                   type="text"
                   name="linkName"
-                  required
                   value={event.linkName}
                   onChange={handleChangeInput}
                   id="linkName"

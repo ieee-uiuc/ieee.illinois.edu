@@ -213,7 +213,6 @@ const EventsAdmin = () => {
               id="link"
               value={event.link}
               onChange={handleChangeInput}
-              required
             />
 
             <label htmlFor="text">linkName</label>
@@ -223,7 +222,6 @@ const EventsAdmin = () => {
               id="linkName"
               value={event.linkName}
               onChange={handleChangeInput}
-              required
             />
 
             <div className="upload">
