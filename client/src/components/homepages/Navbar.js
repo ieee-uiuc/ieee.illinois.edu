@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, lazy } from "react"
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
-import Logo from '../../images/logo.png';
 import { DataContext } from '../Context/GlobalContext';
 import { scroller } from 'react-scroll';
 import { ClickHandler } from './functions/ClickHandler'
+import Logo from '../../images/logo.png';
 
 
 
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="nav-container">
             <nav>
                 <div className="logoBtn">
-                    <Link to="/" onClick={() => scrollToElement('Landing')}><img src={Logo} alt="" /></Link>
+                    <Link to="/" onClick={() => scrollToElement('Landing')}><img src={Logo} loading='lazy' alt="" /></Link>
 
                     <div className="btn" onClick={actToggle}>
                         <div className={toggle ? "bar1 animateBar" : "bar bar1"}></div>
