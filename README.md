@@ -1,7 +1,7 @@
 # IEEE UIUC Webiste
 [https://ieee.illinois.edi]
 
-Website built on MERN stack
+### Website built on MERN stack
 - React.js --> in Client folder
 - Node.js --> served from index.js - runs backend and CRUD opperations
 - Express --> handels http requests
