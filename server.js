@@ -4,8 +4,11 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const fileUpload = require("express-fileupload")
 const path = require("path")
+const redirectToHTTPS = require("express-http-to-https").redirectToHTTPS
 
 const app = express()
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 
 //middleware
 app.use(express.json())

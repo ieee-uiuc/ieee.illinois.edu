@@ -108,7 +108,7 @@ const Navbar = () => {
               <li onClick={logOutSubmit}>
                 {" "}
                 <Link to={isLogin ? "/" : "/login"}>
-                  {isLogin ? "logout" : "login"}
+                  {isLogin ? "Logout" : "Login"}
                 </Link>
               </li>
             </ul>
