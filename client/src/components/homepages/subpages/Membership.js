@@ -40,7 +40,11 @@ export default function Membership() {
           <i>
             Active members willbe able to participate in the reward system for
             attending events, have higher priority to attend events with limited
-            capacity, be added to our resume book
+            capacity, be added to our{" "}
+            <a target="blank" href="https://forms.gle/n879smKJE2b1zCdi9">
+              {" "}
+              resume book
+            </a>
           </i>
         </ul>
         <br />
@@ -86,7 +90,7 @@ export default function Membership() {
                   </a>
                 </i>
               </li>
-              <br/>
+              <br />
               <li>
                 for more information on membership benefits see{" "}
                 <a
