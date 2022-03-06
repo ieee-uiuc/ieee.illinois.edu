@@ -1,4 +1,4 @@
-import React, { useContext, useState, lazy } from "react"
+import React, { useContext, useState } from "react"
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../Context/GlobalContext';
@@ -45,38 +45,76 @@ const Navbar = () => {
     }
 
     return (
-        <div className="nav-container">
-            <nav>
-                <div className="logoBtn">
-                    <Link to="/" onClick={() => scrollToElement('Landing')}><img src={Logo} loading='lazy' alt="" /></Link>
+      <div className="nav-container">
+        <nav>
+          <div className="logoBtn">
+            <Link to="/" onClick={() => scrollToElement("Landing")}>
+              <img src={Logo} loading="lazy" alt="" />
+            </Link>
 
-                    <div className="btn" onClick={actToggle}>
-                        <div className={toggle ? "bar1 animateBar" : "bar bar1"}></div>
-                        <div className={toggle ? "bar2 animateBar" : "bar bar2"}></div>
-                        <div className={toggle ? "bar3 animateBar" : " bar3"}></div>
+            <div className="btn" onClick={actToggle}>
+              <div className={toggle ? "bar1 animateBar" : "bar bar1"}></div>
+              <div className={toggle ? "bar2 animateBar" : "bar bar2"}></div>
+              <div className={toggle ? "bar3 animateBar" : " bar3"}></div>
+            </div>
+          </div>
 
-                    </div>
-
-                </div>
-
-                <div className="links-container">
-                    <ul className={toggle ? "new-links links" : "links"} onClick={closeNavbar}>
-                        {/* <li onClick={() => scrollToElement('Home')}><Link to="/">Home</Link></li> */}
-                        <li onClick={() => scrollToElement('Landing')}><Link to="/">Home</Link></li>
-                        <li onClick={() => scrollToElement('about')}><Link to="/">About</Link></li>
-                        <li onClick={() => scrollToElement('UpcomingEvents')}><Link to="/">Events</Link></li>
-                        {/* <li onClick={() => scrollToElement('Board')}><Link to="/">Events</Link></li> */}
-                        {/* <li onClick={() => scrollToElement('PastEvents')}><Link to="/">previous</Link></li> */}
-                        <li onClick={() => scrollToElement('Contact')}><Link to="/">Contact</Link></li>
-                        <li><Link onClick={ClickHandler('calendar','navbar')} to="/Calendar">Calendar</Link></li>
-                        <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/admin':'/'}>{isLogin?<div className="admin">Admin</div>:''}</Link></li>
-                        <li className={isLogin? '':'adminLi'}><Link to={isLogin?'/register':'/'}>{isLogin?<div className="admin">Register</div>:''}</Link></li>
-                        <li onClick={logOutSubmit}> <Link to={isLogin?'/':'/login'}>{isLogin?"logout":"login"}</Link></li>
-                    </ul>
-                </div>
-
-            </nav>
-        </div>
+          <div className="links-container">
+            <ul
+              className={toggle ? "new-links links" : "links"}
+              onClick={closeNavbar}
+            >
+              {/* <li onClick={() => scrollToElement('Home')}><Link to="/">Home</Link></li> */}
+              <li onClick={() => scrollToElement("Landing")}>
+                <Link to="/">Home</Link>
+              </li>
+              <li onClick={() => scrollToElement("about")}>
+                <Link to="/">About</Link>
+              </li>
+              <li onClick={() => scrollToElement("UpcomingEvents")}>
+                <Link to="/">Events</Link>
+              </li>
+              {/* <li onClick={() => scrollToElement('Board')}><Link to="/">Events</Link></li> */}
+              {/* <li onClick={() => scrollToElement('PastEvents')}><Link to="/">previous</Link></li> */}
+              <li onClick={() => scrollToElement("Contact")}>
+                <Link to="/">Contact</Link>
+              </li>
+              <li>
+                <Link
+                  onClick={ClickHandler("calendar", "navbar")}
+                  to="/Calendar"
+                >
+                  Calendar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  onClick={ClickHandler("membership", "navbar")}
+                  to="/Membership"
+                >
+                  Membership
+                </Link>
+              </li>
+              <li className={isLogin ? "" : "adminLi"}>
+                <Link to={isLogin ? "/admin" : "/"}>
+                  {isLogin ? <div className="admin">Admin</div> : ""}
+                </Link>
+              </li>
+              <li className={isLogin ? "" : "adminLi"}>
+                <Link to={isLogin ? "/register" : "/"}>
+                  {isLogin ? <div className="admin">Register</div> : ""}
+                </Link>
+              </li>
+              <li onClick={logOutSubmit}>
+                {" "}
+                <Link to={isLogin ? "/" : "/login"}>
+                  {isLogin ? "logout" : "login"}
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     )
 }
 
