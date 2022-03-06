@@ -26,7 +26,7 @@ exports.addEvent = async (req, res) => {
             images
         })
         await event.save();
-        res.json({msg:"product added"});
+        res.json({msg:"event added"});
     } catch (error) {
         res.status(500).json({ msg: `server poblems ${error}` })
     }

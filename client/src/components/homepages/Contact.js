@@ -106,7 +106,7 @@ const Contact = () => {
           <p className="contact__container__info__title">Email Address:</p>
           <i className="contact__container__info__text">ieee.uiuc@gmail.com</i>
           <p className="contact__container__info__title__advertising">
-            Advertisings:
+            Social Media:
           </p>
           <div className="contact-media">
             <a
