@@ -1,5 +1,5 @@
 # IEEE UIUC Webiste
-[https://ieee.illinois.edi]
+[https://ieee.illinois.edu]
 
 ### Website built on MERN stack
 - React.js --> in Client folder
