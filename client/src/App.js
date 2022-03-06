@@ -14,6 +14,7 @@ const About = lazy(() => import("./components/homepages/About"))
 const UpcomingEvents = lazy(() => import("./components/homepages/UpcomingEvents"))
 const PastEvents = lazy(() => import("./components/homepages/PastEvents"))
 const Advertising = lazy(() => import("./components/homepages/Advertising"))
+const Membership = lazy(() => import("./components/homepages/subpages/Membership"))
 const Contact = lazy(() => import("./components/homepages/Contact"))
 
 const Board = lazy(()=> import("./components/homepages/subpages/Board"))
@@ -113,6 +114,7 @@ function App() {
         <Route exact path="/board" component={Board} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/membership" component={Membership} />
       </Suspense>
 
       <Route component={Footer} />
