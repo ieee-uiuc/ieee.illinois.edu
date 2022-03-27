@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { AdminClickHandler } from "../../homepages/functions/AdminHandler"
+import moment from "moment"
 
 export class Popup extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export class Popup extends Component {
       var cleaned = ("" + phoneNumberString).replace(/\D/g, "")
       var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
       if (match) {
-        var intlCode = match[1] ? (+1|1|+1 |1 ) : "1"
+        var intlCode = match[1] ? +1 | 1 | +1 | 1 : "1"
         return [intlCode, match[2], match[3], match[4]].join("")
       }
       return null
@@ -66,13 +67,16 @@ export class Popup extends Component {
             `Sucsessfully registered for SMS notification for phone number: ${res.data.phoneNumber} for event: ${res.data.event}`
           )
           AdminClickHandler("added", "appointment")
-          setTimeout(() => { this.setState({ message: ''}) }, 2000)
+          setTimeout(() => {
+            this.setState({ message: "" })
+          }, 2000)
         } catch (error) {
           console.log(error)
         }
-      }
-      else {
-        alert("invalid phone number: please enter in format: (123) 456-7890, (123)456-7890, 123-456-7890 or 1234567890")
+      } else {
+        alert(
+          "invalid phone number: please enter in format: (123) 456-7890, (123)456-7890, 123-456-7890 or 1234567890"
+        )
       }
     }
 
@@ -81,7 +85,7 @@ export class Popup extends Component {
         <div className="card">
           <div className="card__title">{this.props.title}</div>
           <div className="card__date">
-            <i>{this.props.date.toLocaleString()}</i>
+            <i>{moment(this.props.date).format("dddd, MMMM Do h:mm A")}</i>
           </div>
           <div className="card__location">
             <i>{this.props.location}</i>
@@ -90,18 +94,21 @@ export class Popup extends Component {
             <img src={this.props.image} alt={this.props.id} />
           </div>
           <div className="card__description">{this.props.description}</div>
-          <div className="card__link-container">
-            <Link
-              to={{
-                pathname: `${this.props.link}`,
-              }}
-              className="about__link__link"
-              target="_blank"
-            >
-              {this.props.linkName}
-            </Link>
-          </div>
-
+          {this.props.link ? (
+            <div className="card__link-container">
+              <Link
+                to={{
+                  pathname: `${this.props.link}`,
+                }}
+                className="about__link__link"
+                target="_blank"
+              >
+                {this.props.linkName}
+              </Link>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="card__phone">
             <form onSubmit={handleSubmit}>
               <h2 className="card__phone__title">
