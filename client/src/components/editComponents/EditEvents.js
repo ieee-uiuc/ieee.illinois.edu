@@ -120,7 +120,6 @@ const EditEvent = (props) => {
 
     return (
       <div className="edit">
-
         <div className="main-container">
           <div className="same-component">
             <div className="same-form">
@@ -149,7 +148,7 @@ const EditEvent = (props) => {
 
                 <label htmlFor="text">date</label>
                 <input
-                  type="text"
+                  type="datetime-local"
                   name="date"
                   required
                   value={event.date}
@@ -167,7 +166,7 @@ const EditEvent = (props) => {
                   id="location"
                 />
 
-                <label htmlFor="text">upcoming</label>
+                {/* <label htmlFor="text">upcoming</label>
                 <input
                   type="text"
                   name="upcoming"
@@ -175,7 +174,18 @@ const EditEvent = (props) => {
                   value={event.upcoming}
                   onChange={handleChangeInput}
                   id="upcoming"
-                />
+                /> */}
+
+                <label htmlFor="text">upcoming</label>
+                <select
+                  name="upcoming"
+                  id="upcoming"
+                  value={event.upcoming}
+                  required
+                >
+                  <option value={(event.upcoming = false)}>false</option>
+                  <option value={(event.upcoming = true)}>true</option>
+                </select>
 
                 <label htmlFor="text">link</label>
                 <input

@@ -95,7 +95,7 @@ function App() {
             isLogin ? <Admin /> : <Login setIsLogin={setIsLogin} />
           }
         />
-        <Route
+        <Route 
           exact
           path="/register"
           render={() => (isLogin ? <Register /> : <Login />)}

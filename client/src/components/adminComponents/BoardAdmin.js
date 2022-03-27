@@ -78,6 +78,7 @@ const BoardsAdmin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            console.log({...board})
             const res = await axios.post('/fetchboard', { ...board, images })
             setMessage(res.data.msg)
             setTimeout(() => {
