@@ -210,3 +210,44 @@
     height: 35em;
   }
 }
+
+.card__phone {
+  margin: 1em;
+  &__title {
+    text-align: center;
+    margin: 0.3em;
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__text {
+      padding: 0.2em;
+      font-weight: 600;
+    }
+    &__input {
+      width: 250px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    &__submit {
+      width:165px;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      margin: 4px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: ease-in-out .15s;
+    }
+    &__submit:hover {
+      background-color: #45a049;
+    }
+  }
+}

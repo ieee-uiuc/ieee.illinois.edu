@@ -14,15 +14,15 @@ const appointmentSchema = new mongoose.Schema({
 })
 
 appointmentSchema.methods.requiresNotification = function (date) {
-  console.log(
-    Math.round(
-      moment
-        .duration(
-          moment(this.time).tz(this.timeZone).utc().diff(moment(date).utc())
-        )
-        .asMinutes()
-    )
-  )
+  // console.log(
+  //   Math.round(
+  //     moment
+  //       .duration(
+  //         moment(this.time).tz(this.timeZone).utc().diff(moment(date).utc())
+  //       )
+  //       .asMinutes()
+  //   )
+  // )
   return (
     Math.round(
       moment
@@ -38,7 +38,7 @@ appointmentSchema.statics.sendNotifications = function (callback) {
   // now
   const searchDate = new Date()
   Appointment.find().then(function (appointments) {
-    console.log(appointments, searchDate)
+    // console.log(appointments, searchDate)
     appointments = appointments.filter(function (appointment) {
       return appointment.requiresNotification(searchDate)
     })

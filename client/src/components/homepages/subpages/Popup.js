@@ -62,7 +62,9 @@ export class Popup extends Component {
           }
           const res = await axios.post(`/appointment`, appointmentArray)
           this.setState({ appointment: "", message: "sucsess!" })
-          // console.log(res.data.msg, "msg")
+          alert(
+            `Sucsessfully registered for SMS notification for phone number: ${res.data.phoneNumber} for event: ${res.data.event}`
+          )
           AdminClickHandler("added", "appointment")
           setTimeout(() => { this.setState({ message: ''}) }, 2000)
         } catch (error) {
@@ -102,18 +104,28 @@ export class Popup extends Component {
 
           <div className="card__phone">
             <form onSubmit={handleSubmit}>
-              <h2>
-                <i>SMS reminder</i>
+              <h2 className="card__phone__title">
+                <i>SMS reminder 1 hour before event</i>
               </h2>
-              <label htmlFor="phone number">Phone Number</label>
-              <input
-                type="text"
-                value={this.state.appointment}
-                onChange={onChangeAppointment}
-                cols="30"
-                row="1"
-              />
-              <button type="submit">send notification</button>
+              <div className="card__phone__form">
+                <label
+                  className="card__phone__form__text"
+                  htmlFor="phone number"
+                >
+                  Phone Number:
+                </label>
+                <input
+                  className="card__phone__form__input"
+                  type="text"
+                  value={this.state.appointment}
+                  onChange={onChangeAppointment}
+                  cols="30"
+                  row="1"
+                />
+                <button className="card__phone__form__submit" type="submit">
+                  send notification
+                </button>
+              </div>
             </form>
           </div>
 
