@@ -117,6 +117,7 @@ export class Popup extends Component {
                 <input
                   className="card__phone__form__input"
                   type="text"
+                  placeholder="1234567890"
                   value={this.state.appointment}
                   onChange={onChangeAppointment}
                   cols="30"
