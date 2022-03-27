@@ -1,5 +1,5 @@
 const Appointment = require("../models/appointment")
-//get all users
+
 exports.getAppointment = async (req, res) => {
   const appointment = await Appointment.find()
   try {
@@ -9,14 +9,26 @@ exports.getAppointment = async (req, res) => {
   }
 }
 
-//add user
 exports.addAppointment = async (req, res) => {
-  const { appointment } = req.body
 
-  //async await
+  const {
+    name,
+    event,
+    phoneNumber,
+    notification,
+    timeZone,
+    time,
+  } = req.body
+
+  //first way async await
   try {
     const newAppointment = new Appointment({
-      appointment: appointment,
+      name,
+      event,
+      phoneNumber,
+      notification,
+      timeZone,
+      time,
     })
     await newAppointment.save()
     res.json(newAppointment)

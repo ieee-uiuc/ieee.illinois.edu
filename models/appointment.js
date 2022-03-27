@@ -10,7 +10,7 @@ const appointmentSchema = new mongoose.Schema({
   phoneNumber: String,
   notification: Number,
   timeZone: String,
-  time: { type: Date, index: true },
+  time: Date,
 })
 
 appointmentSchema.methods.requiresNotification = function (date) {

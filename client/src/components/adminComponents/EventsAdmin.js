@@ -82,7 +82,8 @@ const EventsAdmin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('/event', { ...event, images })
+          const res = await axios.post('/event', { ...event, images })
+          console.log({...event})
             setMessage(res.data.msg)
             setTimeout(() => {
                 setMessage('')
