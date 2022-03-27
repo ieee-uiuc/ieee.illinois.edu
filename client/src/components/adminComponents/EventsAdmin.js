@@ -72,18 +72,20 @@ const EventsAdmin = () => {
 
         const { name, value } = e.target
 
-        setEvent({ ...event, [name]: value })
+      setEvent({ ...event, [name]: value })
+
         // console.log(product.description)
         // console.log(product.title)
-        // console.log(product.product_id)
+        // console.log(event.date)
     }
 
     //submit
     const handleSubmit = async (e) => {
-        e.preventDefault()
+      e.preventDefault()
+      console.log(event.upcoming)
         try {
           const res = await axios.post('/event', { ...event, images })
-          console.log({...event})
+          // console.log({...event})
             setMessage(res.data.msg)
             setTimeout(() => {
                 setMessage('')
@@ -168,7 +170,7 @@ const EventsAdmin = () => {
 
             <label htmlFor="text">Date</label>
             <input
-              type="text"
+              type="datetime-local"
               name="date"
               id="date"
               value={event.date}
@@ -198,14 +200,15 @@ const EventsAdmin = () => {
             />
 
             <label htmlFor="text">upcoming</label>
-            <input
-              type="text"
+            <select
               name="upcoming"
               id="upcoming"
               value={event.upcoming}
-              onChange={handleChangeInput}
               required
-            />
+            >
+              <option value={(event.upcoming = false)}>false</option>
+              <option value={(event.upcoming = true)}>true</option>
+            </select>
 
             <label htmlFor="text">link</label>
             <input

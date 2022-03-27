@@ -14,6 +14,15 @@ const appointmentSchema = new mongoose.Schema({
 })
 
 appointmentSchema.methods.requiresNotification = function (date) {
+  console.log(
+    Math.round(
+      moment
+        .duration(
+          moment(this.time).tz(this.timeZone).utc().diff(moment(date).utc())
+        )
+        .asMinutes()
+    )
+  )
   return (
     Math.round(
       moment
@@ -54,7 +63,7 @@ appointmentSchema.statics.sendNotifications = function (callback) {
         to: `+ ${appointment.phoneNumber}`,
         from: process.env.TWILIO_PHONE_NUMBER,
         /* eslint-disable max-len */
-        body: `Hi ${appointment.name}. Just a reminder that you have ${appointment.event}.`,
+        body: `Hi ${appointment.name}. Just a reminder that you have ${appointment.event} in 1 hour.`,
         /* eslint-enable max-len */
       }
 

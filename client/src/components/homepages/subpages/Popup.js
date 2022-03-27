@@ -19,7 +19,7 @@ export class Popup extends Component {
     }
 
     function validatePhoneNumber(input_str) {
-      var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+      var re = /^(1|)?\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
       console.log(re.test(input_str))
       return re.test(input_str)
     }
@@ -28,10 +28,19 @@ export class Popup extends Component {
       var cleaned = ("" + phoneNumberString).replace(/\D/g, "")
       var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
       if (match) {
-        var intlCode = match[1] ? "+1 " : ""
+        var intlCode = match[1] ? (+1|1|+1 |1 ) : "1"
         return [intlCode, match[2], match[3], match[4]].join("")
       }
       return null
+    }
+
+    function convertTZ(date, tzString) {
+      return new Date(
+        (typeof date === "string" ? new Date(date) : date).toLocaleString(
+          "en-US",
+          { timeZone: tzString }
+        )
+      )
     }
 
     const handleSubmit = async (e) => {
@@ -47,13 +56,13 @@ export class Popup extends Component {
             name: "IEEE Member",
             event: this.props.title,
             phoneNumber: appoi,
-            notification: 30,
+            notification: 60,
             timeZone: "America/Chicago",
-            time: Date(this.props.date),
+            time: convertTZ(this.props.date, "America/Chicago"),
           }
           const res = await axios.post(`/appointment`, appointmentArray)
           this.setState({ appointment: "", message: "sucsess!" })
-          console.log(res.data.msg, "msg")
+          // console.log(res.data.msg, "msg")
           AdminClickHandler("added", "appointment")
           setTimeout(() => { this.setState({ message: ''}) }, 2000)
         } catch (error) {
