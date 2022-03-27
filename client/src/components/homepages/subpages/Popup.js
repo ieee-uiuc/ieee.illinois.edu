@@ -81,7 +81,7 @@ export class Popup extends Component {
         <div className="card">
           <div className="card__title">{this.props.title}</div>
           <div className="card__date">
-            <i>{this.props.date..toLocaleString()}</i>
+            <i>{this.props.date.toLocaleString()}</i>
           </div>
           <div className="card__location">
             <i>{this.props.location}</i>
