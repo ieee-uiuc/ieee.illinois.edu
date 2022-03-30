@@ -37,7 +37,7 @@ export default class Hackathon extends React.Component {
           Come join Us For The First Ever <div>IEEE x HKN</div> Hackathon!
         </h1>
         <p className="hackathon__body">
-          May 5th we are hosting a hackathon for all skill levels to compete in! More information to come . . .
+          April 23rd-24th we are hosting a hackathon for all skill levels to compete in! More information to come . . .
         </p>
       </div>
     )
