@@ -8,3 +8,7 @@ $black:rgb(20,20,20);
 $navBarHeight: 3.5em;
 $pageHeight: calc(100vh - #{$navBarHeight} - 1em);
 $page:calc(100vh - #{$navBarHeight});
+
+.shadow{
+    text-shadow: 2px 2px 10px black;
+}
