@@ -26,7 +26,7 @@ a {
     opacity: 0;
     transform: translateX(20vh);
     visibility: hidden;
-    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    transition: opacity 1400ms ease-out, transform 1000ms ease-out, visibility 1400ms ease-out;
     will-change: opacity, transform, visibility;
 }
 .fade-in-sectionleft.is-visible {
@@ -39,7 +39,7 @@ a {
     opacity: 0;
     transform: translateX(-20vh);
     visibility: hidden;
-    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    transition: opacity 1400ms ease-out, transform 1000ms ease-out, visibility 1400ms ease-out;
     will-change: opacity, transform, visibility;
 }
 .fade-in-sectionright.is-visible {
@@ -52,7 +52,7 @@ a {
     opacity: 0;
     transform: translateY(20vh);
     visibility: hidden;
-    transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+    transition: opacity 1200ms ease-out, transform 900ms ease-out, visibility 1200ms ease-out;
     will-change: opacity, transform, visibility;
 }
 .fade-in-sectionup.is-visible {
@@ -65,7 +65,7 @@ a {
     opacity: 0;
     transform: translateY(-20vh);
     visibility: hidden;
-    transition: opacity 2400ms ease-out, transform 1200ms ease-out, visibility 2400ms ease-out;
+    transition: opacity 2400ms ease-out, transform 1500ms ease-out, visibility 2400ms ease-out;
     will-change: opacity, transform, visibility;
 }
 .fade-in-sectiondown.is-visible {

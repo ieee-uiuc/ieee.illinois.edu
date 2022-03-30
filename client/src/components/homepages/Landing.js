@@ -12,6 +12,7 @@ const Landing = () => {
       smooth: true,
       offset: -80,
     })
+    // console.log('scroll')
   }
 
   return (
@@ -43,7 +44,7 @@ const Landing = () => {
             </FadeIn>
             <div className="container">
               <div
-                onClick={() => scrollToElement("About")}
+                onClick={() => scrollToElement("about")}
                 className="arrow-container animated"
               >
                 <div className="arrow-2">

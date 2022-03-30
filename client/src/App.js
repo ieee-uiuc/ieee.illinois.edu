@@ -10,6 +10,7 @@ import Landing from "./components/homepages/Landing"
 import Footer from "./components/homepages/Footer"
 
 
+
 const About = lazy(() => import("./components/homepages/About"))
 const UpcomingEvents = lazy(() => import("./components/homepages/UpcomingEvents"))
 const PastEvents = lazy(() => import("./components/homepages/PastEvents"))
@@ -21,7 +22,8 @@ const Board = lazy(()=> import("./components/homepages/subpages/Board"))
 const Login = lazy(()=> import("./components/homepages/Login"))
 const Register = lazy(()=> import("./components/homepages/Register"))
 const SignUp = lazy(()=> import("./components/homepages/subpages/SignUp"))
-const Calendar = lazy(()=> import("./components/homepages/subpages/Calendar"))
+const Calendar = lazy(() => import("./components/homepages/subpages/Calendar"))
+const Hackathon = lazy(() => import("./components/homepages/subpages/Hackathon"))
 
 const Admin = lazy(()=> import("./components/adminComponents/Admin"))
 const EditAbout = lazy(()=> import("./components/editComponents/EditAbout"))
@@ -88,6 +90,12 @@ function App() {
       </Suspense>
 
       <Suspense fallback={renderLoader()}>
+        <Element className="Hackathon">
+          <Route exact path="/hackathon" component={Hackathon} />
+        </Element>
+      </Suspense>
+
+      <Suspense fallback={renderLoader()}>
         <Route
           exact
           path="/login"
@@ -95,7 +103,7 @@ function App() {
             isLogin ? <Admin /> : <Login setIsLogin={setIsLogin} />
           }
         />
-        <Route 
+        <Route
           exact
           path="/register"
           render={() => (isLogin ? <Register /> : <Login />)}
