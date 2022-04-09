@@ -1,7 +1,7 @@
 @import "../../../colors";
 
 .hackathon {
-  height: $pageHeight;
+  height: $page;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,20 +13,163 @@
     width: 75vw;
     color: #fff;
   }
-  &__body{
-      margin: 1em;
-      max-width: 80vw;
-      font-size: 3vh;
+  &__body {
+    margin: 1em;
+    max-width: 80vw;
+    font-size: 3vh;
+    text-align: center;
+    font-weight: 600;
+  }
+  &__overlay {
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.35);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+  }
+  &__info {
+    background-color: white;
+    color: black;
+    margin: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+      font-size: 4em;
+      font-weight: 700;
+      text-align: center;
+    }
+    &__text {
       text-align: center;
       font-weight: 600;
+      line-height: 1.6rem;
+      width: 60vw;
+    }
   }
-  &__overlay{
-      position: absolute;
-      background-color: rgba(20,20,20,.35);
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-      z-index: 1;
+  &__prizes {
+    background-color: white;
+    color: black;
+    margin: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__intiner{
+    background-color: white;
+    color: black;
+    margin: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
+.hax-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1.25em 0 0 0;
+        font-size: 1.5em;
+        &__button {
+            border: black 2px solid;
+            margin: .5em;
+            padding: 0.75em 0;
+            width: 25vw;
+            text-align: center;
+            color: black;
+            transition: ease-in-out 0.25s;
+        }
+        @media screen and (max-width: 500px) {
+            &__button{
+                width: 40vw;
+                margin: 0 .5em;
+            }
+        }
+        &__button:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+.wave-info {
+  text-align: center;
+  font-size: 36px;
+  height: 3em;
+  position: relative;
+  top: -1px;
+}
+
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient(to top, $black 20%, $black 80%);
+}
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  -webkit-animation: move-wave 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
