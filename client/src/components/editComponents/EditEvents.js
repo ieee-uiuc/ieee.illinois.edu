@@ -70,7 +70,7 @@ const EditEvent = (props) => {
     const handleChangeInput = (e) => {
 
         const { name, value } = e.target
-
+        console.log(e.target)
         setEvents({ ...event, [name]: value })
     }
 
@@ -111,12 +111,14 @@ const EditEvent = (props) => {
         }
         setTimeout(() => {
             history.push('/admin')
-        }, 5000)
+        }, 1000)
     }
 
     const styleUpload = {
         display: images ? 'block' : 'none'
     }
+
+  console.log(event.upcoming)
 
     return (
       <div className="edit">
@@ -166,7 +168,7 @@ const EditEvent = (props) => {
                   id="location"
                 />
 
-                {/* <label htmlFor="text">upcoming</label>
+                <label htmlFor="text">upcoming</label>
                 <input
                   type="text"
                   name="upcoming"
@@ -174,9 +176,9 @@ const EditEvent = (props) => {
                   value={event.upcoming}
                   onChange={handleChangeInput}
                   id="upcoming"
-                /> */}
+                />
 
-                <label htmlFor="text">upcoming</label>
+                {/* {/* <label htmlFor="text">upcoming</label>
                 <select
                   name="upcoming"
                   id="upcoming"
@@ -185,7 +187,7 @@ const EditEvent = (props) => {
                 >
                   <option value={(event.upcoming = false)}>false</option>
                   <option value={(event.upcoming = true)}>true</option>
-                </select>
+                </select> */}
 
                 <label htmlFor="text">link</label>
                 <input

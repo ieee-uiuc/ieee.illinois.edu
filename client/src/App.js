@@ -24,6 +24,9 @@ const Register = lazy(()=> import("./components/homepages/Register"))
 const SignUp = lazy(()=> import("./components/homepages/subpages/SignUp"))
 const Calendar = lazy(() => import("./components/homepages/subpages/Calendar"))
 const Hackathon = lazy(() => import("./components/homepages/subpages/Hackathon"))
+const Itinerary = lazy(() =>
+  import("./components/homepages/subpages/Itinerary")
+)
 
 const Admin = lazy(()=> import("./components/adminComponents/Admin"))
 const EditAbout = lazy(()=> import("./components/editComponents/EditAbout"))
@@ -92,6 +95,12 @@ function App() {
       <Suspense fallback={renderLoader()}>
         <Element className="Hackathon">
           <Route exact path="/hackathon" component={Hackathon} />
+        </Element>
+      </Suspense>
+
+      <Suspense fallback={renderLoader()}>
+        <Element className="itinerary">
+          <Route exact path="/itinerary" component={Itinerary} />
         </Element>
       </Suspense>
 
