@@ -176,6 +176,12 @@ h2 {
 
 .timeline__block__title {
   font-size: 3rem;
+  font-weight: 800;
+}
+
+.timeline__block__sub {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 @media screen and (max-width: 799px) {

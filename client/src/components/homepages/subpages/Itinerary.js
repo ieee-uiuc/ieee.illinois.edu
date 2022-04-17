@@ -28,7 +28,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">5:00pm - 6:00pm</h1>
+                  <h1 class="timeline__block__sub">5:00pm - 6:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
@@ -42,7 +42,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00pm - 8:00pm</h1>
+                  <h1 class="timeline__block__sub">7:00pm - 8:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">Proposal review</p>
@@ -66,7 +66,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00am</h1>
+                  <h1 class="timeline__block__sub">7:00am</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">Open up spaces</p>
@@ -77,7 +77,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00am - 10:00am</h1>
+                  <h1 class="timeline__block__sub">7:00am - 10:00am</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
@@ -90,11 +90,12 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">12:00pm - 1:00pm</h1>
+                  <h1 class="timeline__block__sub">12:00pm - 1:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    CAD (Fusion 360) For 3D printing Workshop (3001)
+                    CAD (Fusion 360) For 3D printing Workshop (3001) -{" "}
+                    <a href="https://cglink.me/2ek/r1589594">SIGN UP FORM</a>
                   </p>
                 </div>
               </div>
@@ -103,10 +104,13 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">1:00pm - 2:00pm</h1>
+                  <h1 class="timeline__block__sub">1:00pm - 2:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
-                  <p class="timeline__block__text">Arduino Workshop (3001)</p>
+                  <p class="timeline__block__text">
+                    Arduino Workshop (3001) -{" "}
+                    <a href="https://cglink.me/2ek/r1589597">SIGN UP FORM</a>
+                  </p>
                 </div>
               </div>
               <div class="timeline__block">
@@ -114,7 +118,21 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">2:00pm - 7:00pm</h1>
+                  <h1 class="timeline__block__sub">2:00pm - 3:00pm</h1>
+                </div>
+                <div class="timeline__block__body">
+                  <p class="timeline__block__text">
+                    Raspberry Pi + Micropython Workshop (3001) -{" "}
+                    <a href="https://cglink.me/2ek/r1589597">SIGN UP FORM</a>
+                  </p>
+                </div>
+              </div>
+              <div class="timeline__block">
+                <div class="timeline__block__bullet-point">
+                  <span class="timeline__block__circle"></span>
+                </div>
+                <div class="timeline__block__head">
+                  <h1 class="timeline__block__sub">2:00pm - 7:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">Office Hours (3001)</p>
@@ -125,10 +143,13 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">4:00pm - 5:00pm</h1>
+                  <h1 class="timeline__block__sub">4:00pm - 5:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
-                  <p class="timeline__block__text">Soldering Workshop (4072)</p>
+                  <p class="timeline__block__text">
+                    Soldering Workshop (4072) -{" "}
+                    <a href="https://cglink.me/2ek/r1589585">SIGN UP FORM</a>
+                  </p>
                 </div>
               </div>
               <div class="timeline__block">
@@ -149,7 +170,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00am</h1>
+                  <h1 class="timeline__block__sub">7:00am</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">Open up spaces</p>
@@ -160,7 +181,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00am - 10:00am</h1>
+                  <h1 class="timeline__block__sub">7:00am - 10:00am</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">Office Hours (3001)</p>
@@ -171,25 +192,13 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">1:00pm - 2:00pm</h1>
-                </div>
-                <div class="timeline__block__body">
-                  <p class="timeline__block__text">
-                    RP2040 + Micropython Workshop (3001)
-                  </p>
-                </div>
-              </div>
-              <div class="timeline__block">
-                <div class="timeline__block__bullet-point">
-                  <span class="timeline__block__circle"></span>
-                </div>
-                <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">4:00pm - 5:00pm</h1>
+                  <h1 class="timeline__block__sub">4:00pm - 5:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
                     KiCad PCB Design Workshop - (Taking project to the next
-                    step)
+                    step) -{" "}
+                    <a href="https://cglink.me/2ek/r1589598">SIGN UP FORM</a>
                   </p>
                 </div>
               </div>
@@ -198,7 +207,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">5:00pm</h1>
+                  <h1 class="timeline__block__sub">5:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
@@ -211,7 +220,7 @@ export default function Itinerary() {
                   <span class="timeline__block__circle"></span>
                 </div>
                 <div class="timeline__block__head">
-                  <h1 class="timeline__block__title">7:00pm</h1>
+                  <h1 class="timeline__block__sub">7:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
