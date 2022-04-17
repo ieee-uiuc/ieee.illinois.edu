@@ -40,8 +40,15 @@ export default class Hackathon extends React.Component {
           </h1>
           <p className="hackathon__body">
             April 23rd-24th we are hosting a hackathon for all skill levels to
-            compete in! More information to come . . .
+            compete in!
           </p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeaNMBLC2FzUnfcPn9AmuWk0xBbudKIo3DxYNmfeq7U-fQvdg/viewform?usp=sf_link"
+            className="hax-container__button-white"
+            target="_blank"
+          >
+            Sign up!
+          </a>
         </div>
         <div className="wave-info">
           <div className="waveWrapper waveAnimation">
