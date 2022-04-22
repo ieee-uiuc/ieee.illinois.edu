@@ -19,7 +19,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Meet in ECEB 4072 and 3001
+                    Meet in ECEB 4072 and 3002
                   </p>
                 </div>
               </div>
@@ -32,7 +32,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Kickoff in 3001! (explanation of schedule and how to make a
+                    Kickoff in 3002! (explanation of schedule and how to make a
                     project proposal)
                   </p>
                 </div>
@@ -57,7 +57,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Meet in ECEB 4072 and 3001
+                    Meet in ECEB 4072 and 3002
                   </p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Proposal review and Office Hours (3001)
+                    Proposal review and Office Hours (3002)
                   </p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    CAD (Fusion 360) For 3D printing Workshop (3001) -{" "}
+                    CAD (Fusion 360) For 3D printing Workshop (3002) -{" "}
                     <a href="https://cglink.me/2ek/r1589594">SIGN UP FORM</a>
                   </p>
                 </div>
@@ -108,7 +108,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Arduino Workshop (3001) -{" "}
+                    Arduino Workshop (3002) -{" "}
                     <a href="https://cglink.me/2ek/r1589597">SIGN UP FORM</a>
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Raspberry Pi + Micropython Workshop (3001) -{" "}
+                    Raspberry Pi + Micropython Workshop (3002) -{" "}
                     <a href="https://cglink.me/2ek/r1589597">SIGN UP FORM</a>
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export default function Itinerary() {
                   <h1 class="timeline__block__sub">2:00pm - 7:00pm</h1>
                 </div>
                 <div class="timeline__block__body">
-                  <p class="timeline__block__text">Office Hours (3001)</p>
+                  <p class="timeline__block__text">Office Hours (3002)</p>
                 </div>
               </div>
               <div class="timeline__block">
@@ -161,7 +161,7 @@ export default function Itinerary() {
                 </div>
                 <div class="timeline__block__body">
                   <p class="timeline__block__text">
-                    Meet in ECEB 4072 and 3001 for 7:00am-7:00pm reservation
+                    Meet in ECEB 4072 and 3002 for 7:00am-7:00pm reservation
                   </p>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function Itinerary() {
                   <h1 class="timeline__block__sub">7:00am - 10:00am</h1>
                 </div>
                 <div class="timeline__block__body">
-                  <p class="timeline__block__text">Office Hours (3001)</p>
+                  <p class="timeline__block__text">Office Hours (3002)</p>
                 </div>
               </div>
               <div class="timeline__block">
