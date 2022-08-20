@@ -6,7 +6,7 @@ const memberSchema = new mongoose.Schema({
     required: true,
   },
   points: {
-    type: Number,
+    type: String,
     required: true,
     // validate: {
     //   validator: Number.isInteger,

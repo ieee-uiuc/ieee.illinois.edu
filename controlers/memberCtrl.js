@@ -12,18 +12,43 @@ exports.getMember = async (req, res) => {
 
 //add user
 exports.addMember = async (req, res) => {
-  const { member } = req.body
 
-  //first way async await
-  try {
-    const newMember = new memberSchema({
-      member: member,
-    })
-    await newMember.save()
-    res.json(newMember)
-  } catch (error) {
-    res.status(500).json({ msg: "server problems" })
-  }
+    const {
+      email,
+      points
+    } = req.body
+
+    try {
+      const member = new memberSchema({
+        email,
+        points,
+      })
+      console.log(member)
+      await member.save()
+      res.json({ msg: "member added" })
+    } catch (error) {
+      console.log(error)
+
+      res.status(500).json({ msg: `server poblems ${error}` })
+    }
+
+
+
+
+  // const { member } = req.body
+  // console.log(req.body)
+
+  // //first way async await
+  // try {
+  //   const newMember = new memberSchema({
+  //     member: member,
+  //   })
+  //   await newMember.save()
+  //   res.json(newMember)
+  // } catch (error) {
+  //   console.log(error)
+  //   res.status(500).json({ msg: `server problems: ${error}` })
+  // }
 
   //second way promises
   // const newMember = new memberSchema({
