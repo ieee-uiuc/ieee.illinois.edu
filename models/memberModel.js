@@ -6,12 +6,12 @@ const memberSchema = new mongoose.Schema({
     required: true,
   },
   points: {
-    type: String,
+    type: Number,
     required: true,
-    // validate: {
-    //   validator: Number.isInteger,
-    //   message: "{VALUE} is not an integer value",
-    // },
+    validate: {
+      validator: Number.isInteger,
+      message: "{VALUE} is not an integer value",
+    },
   },
 })
 

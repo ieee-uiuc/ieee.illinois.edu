@@ -1,8 +1,7 @@
 @import "../../../colors";
 
 .member {
-  min-height: $pageHeight;
-  height: 5em;
+  max-height: none;
   color: black;
   display: flex;
   align-items: center;

@@ -1,10 +1,15 @@
 import React from "react"
 import "./Membership.scss"
+import Register from "./Register"
 
 export default function Membership() {
   return (
     <div className="member">
       <h1 className="member__title">Membership</h1>
+
+      <h1 style={{marginTop: "2em"}}>Join the Point System</h1>
+      <Register/>
+
       <body className="member__body">
         <h1>Basic Requirements</h1>
         <br />

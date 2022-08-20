@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react"
 import "./Register.scss"
-import { DataContext } from "../../Context/GlobalContext"
-import { ClickHandler } from "../functions/ClickHandler"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { AdminClickHandler } from "../functions/AdminHandler"
 
 const initialState = {
-  email: '',
-  points: '0',
+  email: "",
+  points: "0",
 }
 
 const Register = () => {
@@ -36,21 +34,35 @@ const Register = () => {
     console.log(member)
   }
 
+  function ValidateEmail(mail) {
+    if (/^\w+([-+.']\w+)*@?(illinois.edu)$/.test(mail)) {
+      return true
+    }
+    return false
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     // console.log('clicked')
-    try {
-      console.log({ ...member })
-      const res = await axios.post(`/fetchmember`, { ...member })
-      setMessage(res.data.msg)
-      AdminClickHandler("added", "member")
+
+    if (ValidateEmail(member.email)) {
+      try {
+        console.log({ ...member })
+        const res = await axios.post(`/fetchmember`, { ...member })
+        setMessage(res.data.msg)
+        AdminClickHandler("added", "member")
+        setTimeout(() => {
+          setMessage("")
+        }, 2000)
+        setMember(initialState)
+        // setMemberData([...memberData,{member}])
+      } catch (error) {
+        //console.log(error)
+      }
+    } else {
       setTimeout(() => {
-        setMessage("")
+        setMessage("invalid email adress")
       }, 2000)
-      setMember("")
-      // setMemberData([...memberData,{member}])
-    } catch (error) {
-      //console.log(error)
     }
   }
 
@@ -75,26 +87,26 @@ const Register = () => {
   }
 
   return (
-    <div className="names">
-      <div className="same-component">
-        <div className="same-form">
-          <form onSubmit={handleSubmit}>
-            <h4>Member Component</h4>
-            <label htmlFor="email">Member</label>
-            <input
-              type="text"
-              value={member.email}
-              onChange={onChangeMember}
-              name="email"
-              cols="30"
-              row="3"
-            />
-            <button type="submit">add item</button>
-          </form>
-        </div>
-
-        <div className="same-item">
-          {memberData.map((item) => (
+    <div className="wrapper">
+      <div className="wrapper__flex">
+              <form className="wrapper__flex__form" onSubmit={handleSubmit}>
+          <p className="wrapper__flex__text">
+            Please enter your email below to join our clubs point system
+          </p>
+          {/* <label htmlFor="email">Email:</label> */}
+          <input
+            placeholder="example@illinois.edu"
+            type="text"
+            value={member.email}
+            onChange={onChangeMember}
+            name="email"
+            cols="30"
+            row="3"
+          />
+          <button type="submit">Register</button>
+        </form>
+        <div className="wrapper__flex__added">
+          {/* {memberData.map((item) => (
             <div className="member-info" key={item._id}>
               <div className="icons">
                 <Link to={`/editMember/${item._id}`}>
@@ -107,7 +119,7 @@ const Register = () => {
               </div>
               <p>{item.email}</p>
             </div>
-          ))}
+          ))} */}
           <h3
             className={
               messageCond ? "new-delete item-delete-tab" : "item-delete-tab"

@@ -1,5 +1,109 @@
 @import "../../../colors";
 
-.names{
-    color: black;
+.wrapper {
+    position: relative;
+  margin: 1em 0;
+  color: black;
+  width: 100%;
+  &__flex {
+    &__text{
+        margin: 1em 0;
+    }
+
+    &__form {
+        margin: 1em;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}
+
+input {
+    margin: 2em 0 .5em 0;
+  padding: 7px;
+  border-radius: 0.25em;
+  border: 1px solid black;
+  outline: none;
+}
+
+button {
+  font-weight: 600;
+  font-size: 1.3em;
+  background-color: white;
+  border: black 2px solid;
+  margin: 1em;
+  padding: 0.75em 0;
+  width: 35vw;
+  text-align: center;
+  color: black;
+  transition: ease-in-out 0.25s;
+}
+
+button:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+
+.item-delete-tab {
+  background: crimson;
+  text-align: center;
+  font-style: italic;
+  color: white;
+  font-weight: 400;
+  width: auto;
+  padding: 2px 20px;
+  margin: 0 auto;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+}
+
+.same-item .icons {
+  text-align: right;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.same-admin .single-advertising {
+  margin-top: 10px;
+}
+
+.contents-admin .single-content {
+  margin-top: 10px;
+}
+
+.fa-trash {
+  color: crimson;
+  margin-left: 20px;
+}
+
+.fa-edit {
+  color: green;
+  margin-left: 10px;
+}
+
+.fa-trash:hover,
+.fa-edit:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.item-delete-tab {
+  background: crimson;
+  text-align: center;
+  font-style: italic;
+  color: white;
+  font-weight: 400;
+  width: auto;
+  padding: 2px 20px;
+  margin: 0 auto;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
 }
