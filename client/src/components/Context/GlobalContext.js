@@ -9,11 +9,14 @@ export const DataProvider = ({ children }) => {
   const [advertising, setAdvertising] = useState([])
   const [events, setEvents] = useState([])
   const [board, setBoard] = useState([])
+  const [member, setMember] = useState([])
   const [loginFin, setLoginFin] = useState(true)
   const [dataAbout, setDataAbout] = useState(true)
   const [dataAdvertising, setDataAdvertising] = useState(true)
   const [dataBoard, setDataBoard] = useState(true)
   const [dataEvents, setDataEvents] = useState(true)
+  const [dataMember, setDataMember] = useState(true)
+
 
   // checking token login
   const checkLogin = async () => {
@@ -81,11 +84,20 @@ export const DataProvider = ({ children }) => {
     })
     setEvents(event.data)
     setDataEvents(false)
+
+    // ...for fetchning members...
+    const member = await axios.get(`/fetchmember`)
+    // console.log(member.data);
+    member.data.sort(function (a, b) {
+      return a.product_id - b.product_id
+    })
+    setMember(member.data)
+    setDataMember(false)
   }
 
   useEffect(() => {
     try {
-      if (dataAbout || dataAdvertising || dataBoard || dataEvents) {
+      if (dataAbout || dataAdvertising || dataBoard || dataEvents || dataMember) {
         fetchData()
       }
     } catch (err) {
@@ -99,10 +111,12 @@ export const DataProvider = ({ children }) => {
     board: [board, setBoard],
     events: [events, setEvents],
     isLogin: [isLogin, setIsLogin],
+    member: [member, setMember],
     dataAbout: [dataAbout, setDataAbout],
     dataAdvertising: [dataAdvertising, setDataAdvertising],
     dataBoard: [dataBoard, setDataBoard],
     dataEvents: [dataEvents, setDataEvents],
+    dataMember: [dataMember, setDataMember],
     loginFin: [loginFin, setLoginFin],
   }
 

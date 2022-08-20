@@ -45,7 +45,7 @@ export default class Hackathon extends React.Component {
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSeaNMBLC2FzUnfcPn9AmuWk0xBbudKIo3DxYNmfeq7U-fQvdg/viewform?usp=sf_link"
             className="hax-container__button-white"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             Sign up!
           </a>

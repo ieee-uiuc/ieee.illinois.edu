@@ -50,6 +50,7 @@ app.use("/", require("./routes/boardRoute"))
 app.use("/", require("./routes/eventRoute"))
 app.use("/", require("./routes/upload"))
 app.use("/", require("./routes/appointmentRoute"))
+app.use("/", require("./routes/memberRoute"))
 
 PORT = process.env.PORT || 5000
 

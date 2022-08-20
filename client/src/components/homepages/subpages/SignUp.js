@@ -1,5 +1,6 @@
 import React from 'react'
 import './SignUp.scss'
+import Register from './Register'
 
 const SignUp = () => {
 
@@ -10,6 +11,7 @@ const SignUp = () => {
                     Sign up for IEEE @ UIUC
                 </h1>
             </div>
+            <Register/>
             <div className="signUp__body">
                 <div className="signUp__body__grainger">
                     <div className="signUp__body__grainger__title">
