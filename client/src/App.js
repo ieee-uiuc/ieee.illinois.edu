@@ -33,6 +33,7 @@ const EditAbout = lazy(()=> import("./components/editComponents/EditAbout"))
 const EditAdvertising = lazy(()=> import("./components/editComponents/EditAdvertising"))
 const EditEvents = lazy(()=> import("./components/editComponents/EditEvents"))
 const EditBoard = lazy(()=> import("./components/editComponents/EditBoard"))
+const EditMembers = lazy(() => import("./components/editComponents/EditMembers"))
 
 const FadeIn = lazy(()=> import("./FadeIn"))
 
@@ -127,6 +128,7 @@ function App() {
         <Route exact path="/editEvent/:id" component={EditEvents} />
         <Route exact path="/editBoard/:id" component={EditBoard} />
         <Route exact path="/editAbout/:id" component={EditAbout} />
+        <Route exact path="/editMember/:id" component={EditMembers} />
         <Route exact path="/join" component={SignUp} />
         <Route exact path="/board" component={Board} />
         <Route exact path="/calendar" component={Calendar} />

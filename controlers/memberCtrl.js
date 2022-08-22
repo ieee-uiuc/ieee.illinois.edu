@@ -77,18 +77,23 @@ exports.getMemberID = async (req, res) => {
 
 //update user by id
 exports.updateMember = async (req, res) => {
-  try {
-    const { member } = req.body
-    const newMember = await memberSchema.findByIdAndUpdate(req.params.id, {
-      member,
-    })
+    const {
+      email,
+      points,
+    } = req.body
 
-    let results = newMember.save()
-    await results
-    res.json({ msg: "Items Updated" })
-  } catch (error) {
-    res.status(500).json({ msg: "server problems" })
-  }
+    try {
+      const member = await memberSchema.findByIdAndUpdate(req.params.id, {
+        email,
+        points,
+      })
+
+      let results = member.save()
+      await results
+      res.json({ msg: "Items Updated" })
+    } catch (error) {
+      res.status(500).json({ msg: `server problems: ${error}` })
+    }
 }
 
 //delete user by id
