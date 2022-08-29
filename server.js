@@ -52,7 +52,7 @@ app.use("/", require("./routes/upload"))
 app.use("/", require("./routes/appointmentRoute"))
 app.use("/", require("./routes/memberRoute"))
 
-PORT = process.env.PORT || 5000
+PORT = process.env.PORT || 8000
 
 // app.use(function (req, res, next) {
 //   const err = new Error("Not Found")

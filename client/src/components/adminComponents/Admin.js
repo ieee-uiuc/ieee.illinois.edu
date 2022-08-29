@@ -5,6 +5,7 @@ import AdvertisingAdmin from "./AdvertisingAdmin"
 import BoardAdmin from "./BoardAdmin"
 import EventsAdmin from "./EventsAdmin"
 import { UserLogin } from "../homepages/functions/AdminHandler"
+import MembersAdmin from "./MemberAdmin"
 
 const Admin = () => {
   useEffect(() => {
@@ -42,6 +43,14 @@ const Admin = () => {
 
           <h4 className="admin-title">Board Component</h4>
           <BoardAdmin />
+
+          <br />
+          <br />
+          <hr style={{ border: "1px solid lightgray" }}></hr>
+          <br />
+
+          <h4 className="admin-title">Member Component</h4>
+          <MembersAdmin />
 
           <br />
         </div>

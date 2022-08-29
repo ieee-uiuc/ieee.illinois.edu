@@ -22,3 +22,26 @@
     width: 75%;
   }
 }
+
+.divide{
+  margin: 2em 0 0 0;
+  display:flex;
+
+}
+.section{
+  flex:50%;
+  width: 50vw;
+  // border: 1px solid red;
+}
+@media screen and (max-width: 780px) {
+  .divide{
+    display:flex;
+    flex-direction: column;
+
+  }
+  .section{
+    flex:100%;
+    width: 100vw;
+    // border: 1px solid blue;
+  }
+}

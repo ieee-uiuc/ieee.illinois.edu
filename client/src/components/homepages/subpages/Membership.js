@@ -1,14 +1,26 @@
 import React from "react"
 import "./Membership.scss"
 import Register from "./Register"
+import Points from "./Points"
 
 export default function Membership() {
+
   return (
     <div className="member">
       <h1 className="member__title">Membership</h1>
 
-      <h1 style={{marginTop: "2em"}}>Join the Point System</h1>
-      <Register/>
+      <h1 style={{ marginTop: "2em" }}>Join the Point System</h1>
+
+      <div className="divide">
+        <div className="section">
+          <Register />
+        </div>
+        <div className="section">
+            <div>
+              <Points />
+            </div>
+        </div>
+      </div>
 
       <body className="member__body">
         <h1>Basic Requirements</h1>
