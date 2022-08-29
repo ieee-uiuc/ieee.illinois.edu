@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "./Register.scss"
+import "./Points.scss"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import { AdminClickHandler } from "../functions/AdminHandler"
@@ -9,17 +9,19 @@ const initialState = {
   points: "0",
 }
 
-const Register = () => {
+const Points = () => {
   const [member, setMember] = useState(initialState)
   const [memberData, setMemberData] = useState([])
   const [message, setMessage] = useState("")
   const [messageCond, setMessageCond] = useState(false)
+  let memberDictionary = {}
 
   const fetchData = async () => {
     try {
       const res = await axios.get(`/fetchmember`)
       // console.log(res.data)
       setMemberData(res.data)
+      // console.log(memberData)
     } catch (error) {}
   }
 
@@ -47,9 +49,17 @@ const Register = () => {
 
     if (ValidateEmail(member.email)) {
       try {
-        console.log({ ...member })
-        const res = await axios.post(`/fetchmember`, { ...member })
-        setMessage(res.data.msg)
+        for (var memb in memberData) {
+          memberDictionary[memberData[memb].email] = {
+            points: memberData[memb].points,
+          }
+        }
+
+        if (memberDictionary[member.email]) {
+          setMessage(`point total: ${memberDictionary[member.email].points}`)
+        } else {
+          setMessage(`no member with email: ${member.email}`)
+        }
         AdminClickHandler("added", "member")
         setTimeout(() => {
           setMessage("")
@@ -61,29 +71,9 @@ const Register = () => {
       }
     } else {
       setTimeout(() => {
-        setMessage("invalid email adress")
+        setMessage("Invalid email adress")
       }, 2000)
     }
-  }
-
-  const deleteMember = async (id) => {
-    try {
-      const res = await axios.delete(`/fetchmember/${id}`)
-      setMessageCond(true)
-      setMessage(`${res.data.msg}`)
-      AdminClickHandler("deleted", "member")
-      setTimeout(() => {
-        setMessageCond(false)
-        setMessage("")
-      }, 2000)
-    } catch (error) {
-      console.log(error)
-    }
-
-    //delete from ui
-    const memberFilterDel = memberData.filter((item) => item._id !== id)
-
-    setMemberData(memberFilterDel)
   }
 
   return (
@@ -91,7 +81,7 @@ const Register = () => {
       <div className="wrapper__flex">
         <form className="wrapper__flex__form" onSubmit={handleSubmit}>
           <h3 className="wrapper__flex__text align-center">
-            Please enter your email below to join our clubs point system
+            View your point total
           </h3>
           {/* <label htmlFor="email">Email:</label> */}
           <input
@@ -103,7 +93,7 @@ const Register = () => {
             cols="30"
             row="3"
           />
-          <button type="submit">Register</button>
+          <button type="submit">View Points</button>
         </form>
         <div className="wrapper__flex__added">
           {/* {memberData.map((item) => (
@@ -133,4 +123,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Points

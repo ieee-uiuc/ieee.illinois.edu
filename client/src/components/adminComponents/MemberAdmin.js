@@ -54,6 +54,12 @@ const MembersAdmin = () => {
       }
     }
     fetchData()
+
+    var Memberdict = {}
+    for (var memb in memberData) {
+      Memberdict[memberData[memb].email] = { points: memberData[memb].points }
+      console.log(Memberdict)
+    }
   }, [])
 
   //delete functionality
@@ -121,8 +127,8 @@ const MembersAdmin = () => {
 
               <div className="single-content">
                 <div className="single-content-info">
-                  <h3>email: <i style={{fontWeight:"300"}}>{item.email}</i></h3>
-                  <h3>points: <i style={{fontWeight:"300"}}>{item.points}</i></h3>
+                  <h3><i style={{fontWeight:"300"}}>{item.email}</i></h3>
+                  {/* <h3>points: <i style={{fontWeight:"300"}}>{item.points}</i></h3> */}
                 </div>
               </div>
               <h3
