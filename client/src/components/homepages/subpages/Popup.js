@@ -4,12 +4,13 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 import { AdminClickHandler } from "../../homepages/functions/AdminHandler"
 import moment from "moment"
+import AddPoints from "./addPoints"
 
 export class Popup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      appointment: "",
+        appointment: "",
       message: {},
     }
   }
@@ -136,6 +137,8 @@ export class Popup extends Component {
               </div>
             </form>
           </div>
+
+            <AddPoints />
 
           <button
             onClick={() => {

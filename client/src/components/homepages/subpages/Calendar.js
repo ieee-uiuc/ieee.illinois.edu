@@ -22,7 +22,7 @@ export default class Calendar extends Component {
         <div className="cal-text">
           <h1 className="cal-title">Calendar</h1>
           <a
-            href="https://calendar.google.com/calendar/u/4?cid=MDM2ODhuMGhtZDl2a2J2MW1wMG9sbGF1ZTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ"
+            href="https://calendar.google.com/calendar/ical/03688n0hmd9vkbv1mp0ollaue0%40group.calendar.google.com/public/basic.ics"
             target="_blank"
             className="add-cal"
           >
@@ -62,7 +62,7 @@ export default class Calendar extends Component {
             eventClick={function (info) {
               var eventObj = info.event
               alert(
-                `${eventObj.title}: \n${eventObj.start}  -\n${eventObj.end} \n${eventObj.url}`,
+                `${eventObj.title}: \n${eventObj.start}  -\n${eventObj.end} \n${eventObj.url}`
               )
               info.jsEvent.preventDefault()
             }}

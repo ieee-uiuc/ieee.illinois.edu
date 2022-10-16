@@ -24,7 +24,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.26.0",
-    "concurrently": "^6.3.0",
+    "concurrently": "^6.5.1",
     "cors": "^2.8.5",
     "cron": "^1.8.2",
     "dotenv": "^10.0.0",
