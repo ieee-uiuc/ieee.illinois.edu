@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from "react-router-dom"
 import './Edit.scss'
 import axios from 'axios'
 import { AdminClickHandler } from '../homepages/functions/AdminHandler'
@@ -9,6 +9,7 @@ const EditAbout = (props) => {
     const [about, setAbout] = useState('')
     const [message, setMessage] = useState('')
     const history = useHistory()
+    const { id } = useParams()
 
     //get id
 
@@ -17,7 +18,7 @@ const EditAbout = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`/fetchabout/${props.match.params.id}`)
+                const res = await axios.get(`/fetchabout/${id}`)
                 // console.log(res.data)
                 setAbout(res.data.about)
             } catch (error) {

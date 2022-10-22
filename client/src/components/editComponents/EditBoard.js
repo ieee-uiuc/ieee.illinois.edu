@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from "react-router-dom"
 import './Edit.scss'
 import axios from 'axios'
 import { AdminClickHandler } from '../homepages/functions/AdminHandler'
@@ -17,6 +17,8 @@ const EditBoard = (props) => {
     const [images, setImages] = useState(false)
     const [message, setMessage] = useState('')
     const history = useHistory()
+    const { id } = useParams()
+
 
     //upload
     const handleUpload = async (e) => {
@@ -73,7 +75,7 @@ const EditBoard = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`/fetchboard/${props.match.params.id}`)
+                const res = await axios.get(`/fetchboard/${id}`)
                 setBoards({
                     product_id: res.data.product_id,
                     name: res.data.name,
@@ -91,7 +93,7 @@ const EditBoard = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`/fetchboard/update/${props.match.params.id}`, { ...board, images })
+            const res = await axios.put(`/fetchboard/update/${id}`, { ...board, images })
             setMessage(res.data.msg)
 
             setImages(false)
