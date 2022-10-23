@@ -31,10 +31,18 @@ const Register = () => {
     const { name, value } = e.target
 
     setMember({ ...member, [name]: value })
-    console.log(member)
   }
 
   function ValidateEmail(mail) {
+    for (var memb in memberData) {
+      memberDictionary[memberData[memb].email] = {
+        points: memberData[memb].points,
+        events: memberData[memb].events,
+      }
+    }
+    if (mail in memberDictionary) {
+      return false
+    }
     if (/^\w+([-+.']\w+)*@?(illinois.edu)$/.test(mail)) {
       return true
     }
