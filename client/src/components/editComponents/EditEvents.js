@@ -10,7 +10,8 @@ const initialState = {
   description: "",
   date: "",
   location: "",
-  upcoming: null,
+    upcoming: null,
+  code: "",
   link: "",
   linkName: "",
   image:"",
@@ -87,7 +88,8 @@ const EditEvent = (props) => {
                   description: res.data.description,
                   date: res.data.date,
                   location: res.data.location,
-                  upcoming: res.data.upcoming,
+                    upcoming: res.data.upcoming,
+                  code: res.data.code,
                   link: res.data.link,
                   linkName: res.data.linkName,
                   image: res.data.image,
@@ -168,6 +170,16 @@ const EditEvent = (props) => {
                   value={event.location}
                   onChange={handleChangeInput}
                   id="location"
+                />
+
+                <label htmlFor="text">code</label>
+                <input
+                  type="text"
+                  name="code"
+                  required
+                  value={event.code}
+                  onChange={handleChangeInput}
+                  id="code"
                 />
 
                 <label htmlFor="text">upcoming</label>
