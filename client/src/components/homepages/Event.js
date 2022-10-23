@@ -36,7 +36,9 @@ const Event = (props) => {
             date={props.date}
             description={props.description}
             link={props.link}
-            linkName={props.linkName}
+                    linkName={props.linkName}
+                    upcoming={props.upcoming}
+                    code={props.code}
           />
         </div>
       </div>

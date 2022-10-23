@@ -138,9 +138,11 @@ export class Popup extends Component {
             </form>
           </div>
 
-                <AddPoints
-                    id={this.props.id}
-                />
+          {this.props.upcoming ? (
+                    <AddPoints id={this.props.id} code={this.props.code} title={this.props.title} />
+          ) : (
+            <div />
+          )}
 
           <button
             onClick={() => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import { AdminClickHandler } from "../../homepages/functions/AdminHandler"
 
 require("dotenv").config()
 
@@ -8,10 +9,9 @@ const AddPoints = (props) => {
   const [code, setCode] = useState([])
   const [email, setEmail] = useState([])
   const [message, setMessage] = useState("")
-    const [messageCond, setMessageCond] = useState(false)
-    let memberDictionary = {}
-    const token = props.id
-
+  const [token, setToken] = useState("")
+  const [messageCond, setMessageCond] = useState(false)
+  let memberDictionary = {}
 
   const fetchData = async () => {
     try {
@@ -24,6 +24,11 @@ const AddPoints = (props) => {
 
   useEffect(() => {
     fetchData()
+    if (props.code) {
+      setToken(props.code)
+    } else {
+      setToken("ieee")
+    }
   }, [])
 
   for (var memb in memberData) {
@@ -39,7 +44,7 @@ const AddPoints = (props) => {
     // console.log(email)
   }
   const onChangeCode = (e) => {
-    setCode(e.target.value)
+      setCode(e.target.value)
   }
 
   const handleSubmitPoints = async (e) => {
@@ -55,6 +60,12 @@ const AddPoints = (props) => {
           `/fetchmember/update/${member.id}`,
           newPoints
         )
+        alert(
+          `Sucsessfully added points to user: ${email} for event: ${props.title}`
+        )
+          AdminClickHandler("added", "points")
+          setEmail("")
+          setCode("")
       } else {
         alert("invalid code: please enter correct event code")
       }
@@ -81,8 +92,8 @@ const AddPoints = (props) => {
               onChange={onChangeEmail}
               cols="30"
               row="1"
-                      />
-                      <br/>
+            />
+            <br />
             <label className="card__form__text" htmlFor="code">
               Code:
             </label>
@@ -94,8 +105,8 @@ const AddPoints = (props) => {
               onChange={onChangeCode}
               cols="30"
               row="1"
-                      />
-                      <br/>
+            />
+            <br />
             <button className="card__points__form__submit" type="submit">
               add points
             </button>

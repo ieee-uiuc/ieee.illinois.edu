@@ -77,7 +77,9 @@ const UpcomingEvents = () => {
                     description={item.description}
                     location={item.location}
                     link={item.link}
-                    linkName={item.linkName}
+                            linkName={item.linkName}
+                            upcoming={item.upcoming}
+                            code={item.code}
                   />
                 )
             )}
