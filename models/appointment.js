@@ -38,7 +38,7 @@ appointmentSchema.statics.sendNotifications = function (callback) {
   // now
   const searchDate = new Date()
   Appointment.find().then(function (appointments) {
-    // console.log(appointments, searchDate)
+    // console.log(appointments)
     appointments = appointments.filter(function (appointment) {
       return appointment.requiresNotification(searchDate)
     })

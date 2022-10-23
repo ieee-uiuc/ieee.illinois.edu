@@ -3,15 +3,15 @@ import axios from "axios"
 
 require("dotenv").config()
 
-const token = process.env.CODE
-
-const AddPoints = () => {
+const AddPoints = (props) => {
   const [memberData, setMemberData] = useState([])
   const [code, setCode] = useState([])
   const [email, setEmail] = useState([])
   const [message, setMessage] = useState("")
-  const [messageCond, setMessageCond] = useState(false)
-  let memberDictionary = {}
+    const [messageCond, setMessageCond] = useState(false)
+    let memberDictionary = {}
+    const token = props.id
+
 
   const fetchData = async () => {
     try {
@@ -70,7 +70,7 @@ const AddPoints = () => {
             <i>Get 5 points for attending this event</i>
           </h2>
           <div className="card__points__form">
-            <label className="card__points__form__text" htmlFor="phone number">
+            <label className="card__form__text" htmlFor="phone number">
               Email:
             </label>
             <input
@@ -81,8 +81,9 @@ const AddPoints = () => {
               onChange={onChangeEmail}
               cols="30"
               row="1"
-            />
-            <label className="code__form__text" htmlFor="code">
+                      />
+                      <br/>
+            <label className="card__form__text" htmlFor="code">
               Code:
             </label>
             <input
@@ -93,7 +94,8 @@ const AddPoints = () => {
               onChange={onChangeCode}
               cols="30"
               row="1"
-            />
+                      />
+                      <br/>
             <button className="card__points__form__submit" type="submit">
               add points
             </button>

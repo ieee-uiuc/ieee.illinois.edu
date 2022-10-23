@@ -30,7 +30,7 @@ const Event = (props) => {
             setIsOpen={setIsOpen}
             isOpen={isOpen}
             location={props.location}
-            key={props.key}
+            id={props.id}
             image={props.image}
             title={props.title}
             date={props.date}

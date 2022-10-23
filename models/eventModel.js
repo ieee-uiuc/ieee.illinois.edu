@@ -38,6 +38,10 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  code: {
+    type: String,
+    required: false,
+  },
 })
 
 module.exports = mongoose.model('events', eventSchema)

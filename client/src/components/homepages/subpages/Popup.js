@@ -10,7 +10,7 @@ export class Popup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-        appointment: "",
+      appointment: "",
       message: {},
     }
   }
@@ -138,7 +138,9 @@ export class Popup extends Component {
             </form>
           </div>
 
-            <AddPoints />
+                <AddPoints
+                    id={this.props.id}
+                />
 
           <button
             onClick={() => {

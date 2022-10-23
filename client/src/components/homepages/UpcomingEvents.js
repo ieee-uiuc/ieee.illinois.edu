@@ -70,7 +70,7 @@ const UpcomingEvents = () => {
               (item) =>
                 item.upcoming && (
                   <Event
-                    key={item.id}
+                    id={item._id}
                     image={item.images.url}
                     title={item.title}
                     date={item.date}
