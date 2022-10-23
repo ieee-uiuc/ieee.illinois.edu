@@ -13,7 +13,8 @@ const Register = () => {
   const [member, setMember] = useState(initialState)
   const [memberData, setMemberData] = useState([])
   const [message, setMessage] = useState("")
-  const [messageCond, setMessageCond] = useState(false)
+    const [messageCond, setMessageCond] = useState(false)
+    let memberDictionary = {}
 
   const fetchData = async () => {
     try {
