@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { AdminClickHandler } from "../../homepages/functions/AdminHandler"
+import "./addPoints.scss"
 
 require("dotenv").config()
 
@@ -44,28 +45,33 @@ const AddPoints = (props) => {
     // console.log(email)
   }
   const onChangeCode = (e) => {
-      setCode(e.target.value)
+    setCode(e.target.value)
   }
 
   const handleSubmitPoints = async (e) => {
     e.preventDefault()
     try {
-      if (code === token) {
-        const member = memberDictionary[email]
-        const newPoints = {
-          email: email,
-          points: member.points + 5,
-        }
-        const res = await axios.put(
-          `/fetchmember/update/${member.id}`,
-          newPoints
-        )
-        alert(
-          `Sucsessfully added points to user: ${email} for event: ${props.title}`
-        )
-          AdminClickHandler("added", "points")
-          setEmail("")
-          setCode("")
+        if (code === token) {
+            if (email in memberDictionary) {
+                const member = memberDictionary[email]
+                const newPoints = {
+                  email: email,
+                  points: member.points + 5,
+                }
+                const res = await axios.put(
+                  `/fetchmember/update/${member.id}`,
+                  newPoints
+                )
+                alert(
+                  `Sucsessfully added points to user: ${email} for event: ${props.title}`
+                )
+                AdminClickHandler("added", "points")
+                setEmail("")
+                setCode("")
+            }
+            else {
+                alert("invalid user: please enter correct email")
+            }
       } else {
         alert("invalid code: please enter correct event code")
       }
@@ -81,7 +87,7 @@ const AddPoints = (props) => {
             <i>Get 5 points for attending this event</i>
           </h2>
           <div className="card__points__form">
-            <label className="card__form__text" htmlFor="phone number">
+            <label className="card__points__form__text" htmlFor="phone number">
               Email:
             </label>
             <input
@@ -94,7 +100,7 @@ const AddPoints = (props) => {
               row="1"
             />
             <br />
-            <label className="card__form__text" htmlFor="code">
+            <label className="card__points__form__text" htmlFor="code">
               Code:
             </label>
             <input
@@ -107,7 +113,7 @@ const AddPoints = (props) => {
               row="1"
             />
             <br />
-            <button className="card__points__form__submit" type="submit">
+            <button className="card__points__form__button" type="submit">
               add points
             </button>
           </div>
