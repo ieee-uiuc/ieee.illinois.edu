@@ -9,33 +9,41 @@ import Navbar from "./components/homepages/Navbar"
 import Landing from "./components/homepages/Landing"
 import Footer from "./components/homepages/Footer"
 
-
-
 const About = lazy(() => import("./components/homepages/About"))
-const UpcomingEvents = lazy(() => import("./components/homepages/UpcomingEvents"))
+const UpcomingEvents = lazy(() =>
+  import("./components/homepages/UpcomingEvents")
+)
 const PastEvents = lazy(() => import("./components/homepages/PastEvents"))
 const Advertising = lazy(() => import("./components/homepages/Advertising"))
-const Membership = lazy(() => import("./components/homepages/subpages/Membership"))
+const Membership = lazy(() =>
+  import("./components/homepages/subpages/Membership")
+)
 const Contact = lazy(() => import("./components/homepages/Contact"))
 
-const Board = lazy(()=> import("./components/homepages/subpages/Board"))
-const Login = lazy(()=> import("./components/homepages/Login"))
-const Register = lazy(()=> import("./components/homepages/Register"))
-const SignUp = lazy(()=> import("./components/homepages/subpages/SignUp"))
+const Board = lazy(() => import("./components/homepages/subpages/Board"))
+const Login = lazy(() => import("./components/homepages/Login"))
+const Register = lazy(() => import("./components/homepages/Register"))
+const SignUp = lazy(() => import("./components/homepages/subpages/SignUp"))
 const Calendar = lazy(() => import("./components/homepages/subpages/Calendar"))
-const Hackathon = lazy(() => import("./components/homepages/subpages/Hackathon"))
+const Hackathon = lazy(() =>
+  import("./components/homepages/subpages/Hackathon")
+)
 const Itinerary = lazy(() =>
   import("./components/homepages/subpages/Itinerary")
 )
 
-const Admin = lazy(()=> import("./components/adminComponents/Admin"))
-const EditAbout = lazy(()=> import("./components/editComponents/EditAbout"))
-const EditAdvertising = lazy(()=> import("./components/editComponents/EditAdvertising"))
-const EditEvents = lazy(()=> import("./components/editComponents/EditEvents"))
-const EditBoard = lazy(()=> import("./components/editComponents/EditBoard"))
-const EditMembers = lazy(() => import("./components/editComponents/EditMembers"))
+const Admin = lazy(() => import("./components/adminComponents/Admin"))
+const EditAbout = lazy(() => import("./components/editComponents/EditAbout"))
+const EditAdvertising = lazy(() =>
+  import("./components/editComponents/EditAdvertising")
+)
+const EditEvents = lazy(() => import("./components/editComponents/EditEvents"))
+const EditBoard = lazy(() => import("./components/editComponents/EditBoard"))
+const EditMembers = lazy(() =>
+  import("./components/editComponents/EditMembers")
+)
 
-const FadeIn = lazy(()=> import("./FadeIn"))
+const FadeIn = lazy(() => import("./FadeIn"))
 
 const renderLoader = () => <p>Loading</p>
 
@@ -124,11 +132,31 @@ function App() {
           path="/admin"
           render={() => (isLogin ? <Admin /> : <Login />)}
         />
-        <Route exact path="/editAdvertising/:id" render={() => (isLogin ? <EditAdvertising /> : <Login />)} />
-        <Route exact path="/editEvent/:id" render={() => (isLogin ? <EditEvents /> : <Login />)} />
-        <Route exact path="/editBoard/:id" render={() => (isLogin ? <EditBoard /> : <Login />)} />
-        <Route exact path="/editAbout/:id" render={() => (isLogin ? <EditAbout /> : <Login />)} />
-        <Route exact path="/editMember/:id" render={() => (isLogin ? <EditMembers /> : <Login />)} />
+        <Route
+          exact
+          path="/editAdvertising/:id"
+          render={() => (isLogin ? <EditAdvertising /> : <Login />)}
+        />
+        <Route
+          exact
+          path="/editEvent/:id"
+          render={() => (isLogin ? <EditEvents /> : <Login />)}
+        />
+        <Route
+          exact
+          path="/editBoard/:id"
+          render={() => (isLogin ? <EditBoard /> : <Login />)}
+        />
+        <Route
+          exact
+          path="/editAbout/:id"
+          render={() => (isLogin ? <EditAbout /> : <Login />)}
+        />
+        <Route
+          exact
+          path="/editMember/:id"
+          render={() => (isLogin ? <EditMembers /> : <Login />)}
+        />
         <Route exact path="/join" component={SignUp} />
         <Route exact path="/board" component={Board} />
         <Route exact path="/calendar" component={Calendar} />
