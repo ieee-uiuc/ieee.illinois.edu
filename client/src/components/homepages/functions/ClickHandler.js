@@ -5,5 +5,4 @@ export function ClickHandler(loc, file) {
     category: "Click Button!",
     action: `Visitor clicked the ${loc} button from ${file}`,
   })
-    console.log('triggered')
 }

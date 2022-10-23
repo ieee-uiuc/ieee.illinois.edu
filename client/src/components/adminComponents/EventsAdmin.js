@@ -11,6 +11,7 @@ const initialState = {
     date: '',
     location: '',
     upcoming: null,
+    code: '',
     link: '',
     linkName:'',
 
@@ -199,6 +200,16 @@ const EventsAdmin = () => {
               required
             />
 
+            <label htmlFor="text">Code</label>
+            <input
+              type="text"
+              name="code"
+              id="code"
+              value={event.code}
+              onChange={handleChangeInput}
+              required
+            />
+
             <label htmlFor="text">upcoming</label>
             <select
               name="upcoming"
@@ -274,6 +285,8 @@ const EventsAdmin = () => {
                     <i>location:{item.location}</i>
                     <br />
                     <i>upcoming:{JSON.stringify(item.upcoming)}</i>
+                    <br />
+                    <i>code:{JSON.stringify(item.code)}</i>
                     <br />
                     <i>link:{JSON.stringify(item.link)}</i>
                     <br />

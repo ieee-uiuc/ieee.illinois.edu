@@ -65,21 +65,24 @@ const Navbar = () => {
               onClick={closeNavbar}
             >
               {/* <li onClick={() => scrollToElement('Home')}><Link to="/">Home</Link></li> */}
-              <li onClick={() => scrollToElement("Landing")}>
+              <li key="landing" onClick={() => scrollToElement("Landing")}>
                 <Link to="/">Home</Link>
               </li>
-              <li onClick={() => scrollToElement("about")}>
+              <li key="about" onClick={() => scrollToElement("about")}>
                 <Link to="/">About</Link>
               </li>
-              <li onClick={() => scrollToElement("UpcomingEvents")}>
+              <li
+                key="events"
+                onClick={() => scrollToElement("UpcomingEvents")}
+              >
                 <Link to="/">Events</Link>
               </li>
               {/* <li onClick={() => scrollToElement('Board')}><Link to="/">Events</Link></li> */}
               {/* <li onClick={() => scrollToElement('PastEvents')}><Link to="/">previous</Link></li> */}
-              <li onClick={() => scrollToElement("Contact")}>
+              <li key="contact" onClick={() => scrollToElement("Contact")}>
                 <Link to="/">Contact</Link>
               </li>
-              <li>
+              <li key="cal">
                 <Link
                   onClick={ClickHandler("calendar", "navbar")}
                   to="/Calendar"
@@ -87,7 +90,7 @@ const Navbar = () => {
                   Calendar
                 </Link>
               </li>
-              <li>
+              <li key="mem">
                 <Link
                   onClick={ClickHandler("membership", "navbar")}
                   to="/Membership"
@@ -95,17 +98,17 @@ const Navbar = () => {
                   Membership
                 </Link>
               </li>
-              <li className={isLogin ? "" : "adminLi"}>
+              <li key="admin" className={isLogin ? "" : "adminLi"}>
                 <Link to={isLogin ? "/admin" : "/"}>
                   {isLogin ? <div className="admin">Admin</div> : ""}
                 </Link>
               </li>
-              <li className={isLogin ? "" : "adminLi"}>
+              <li key="register" className={isLogin ? "" : "adminLi"}>
                 <Link to={isLogin ? "/register" : "/"}>
                   {isLogin ? <div className="admin">Register</div> : ""}
                 </Link>
               </li>
-              <li onClick={logOutSubmit}>
+              <li key="login" onClick={logOutSubmit}>
                 {" "}
                 <Link to={isLogin ? "/" : "/login"}>
                   {isLogin ? "Logout" : "Login"}

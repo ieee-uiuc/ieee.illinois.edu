@@ -124,11 +124,11 @@ function App() {
           path="/admin"
           render={() => (isLogin ? <Admin /> : <Login />)}
         />
-        <Route exact path="/editAdvertising/:id" component={EditAdvertising} />
-        <Route exact path="/editEvent/:id" component={EditEvents} />
-        <Route exact path="/editBoard/:id" component={EditBoard} />
-        <Route exact path="/editAbout/:id" component={EditAbout} />
-        <Route exact path="/editMember/:id" component={EditMembers} />
+        <Route exact path="/editAdvertising/:id" render={() => (isLogin ? <EditAdvertising /> : <Login />)} />
+        <Route exact path="/editEvent/:id" render={() => (isLogin ? <EditEvents /> : <Login />)} />
+        <Route exact path="/editBoard/:id" render={() => (isLogin ? <EditBoard /> : <Login />)} />
+        <Route exact path="/editAbout/:id" render={() => (isLogin ? <EditAbout /> : <Login />)} />
+        <Route exact path="/editMember/:id" render={() => (isLogin ? <EditMembers /> : <Login />)} />
         <Route exact path="/join" component={SignUp} />
         <Route exact path="/board" component={Board} />
         <Route exact path="/calendar" component={Calendar} />

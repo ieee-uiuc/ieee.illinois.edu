@@ -30,13 +30,15 @@ const Event = (props) => {
             setIsOpen={setIsOpen}
             isOpen={isOpen}
             location={props.location}
-            key={props.key}
+            id={props.id}
             image={props.image}
             title={props.title}
             date={props.date}
             description={props.description}
             link={props.link}
-            linkName={props.linkName}
+                    linkName={props.linkName}
+                    upcoming={props.upcoming}
+                    code={props.code}
           />
         </div>
       </div>

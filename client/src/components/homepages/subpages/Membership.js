@@ -16,9 +16,9 @@ export default function Membership() {
           <Register />
         </div>
         <div className="section">
-            <div>
-              <Points />
-            </div>
+          <div>
+            <Points />
+          </div>
         </div>
       </div>
 
@@ -26,7 +26,7 @@ export default function Membership() {
         <h1>Basic Requirements</h1>
         <br />
         <ul>
-          <li>
+          <li key="1">
             <b>1.</b>{" "}
             <i>
               All members of IEEE should be part of the IEEE Group on the
@@ -34,7 +34,7 @@ export default function Membership() {
             </i>
           </li>
           <br />
-          <li>
+          <li key="2">
             <b>2.</b>{" "}
             <i>
               https://students.grainger.illinois.edu/IEEE/club_signup This will
@@ -47,7 +47,7 @@ export default function Membership() {
         <h2>Active membership</h2>
         <br />
         <ul>
-          <li>
+          <li key="local">
             <i>
               To be an active member of IEEE, you must attend a total of 3 IEEE
               meetings or events.
@@ -68,7 +68,7 @@ export default function Membership() {
         <h2>National membership</h2>
         <br />
         <ul>
-          <li>
+          <li key="national">
             <i>
               Being a national organization, there is a national membership you
               can pay for on the
@@ -81,14 +81,14 @@ export default function Membership() {
             </i>
           </li>
           <br />
-          <li>
+          <li key="bene">
             <h3>Benefits from being a national member:</h3>
             <ul>
-              <li>
+              <li key="net">
                 Network with other professionals in your local area or within a
                 specific technical interest
               </li>
-              <li>
+              <li key="dis">
                 <i>
                   get discounts and free software including: GE Appliances, UPS
                   Shipping, Dell Technologies, and Wolfram. For more see
@@ -108,7 +108,7 @@ export default function Membership() {
                 </i>
               </li>
               <br />
-              <li>
+              <li key="info">
                 for more information on membership benefits see{" "}
                 <a
                   target="blank"

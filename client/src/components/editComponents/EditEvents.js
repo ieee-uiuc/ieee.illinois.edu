@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, useParams } from "react-router-dom"
 import './Edit.scss'
 import axios from 'axios'
 import { AdminClickHandler } from '../homepages/functions/AdminHandler'
@@ -10,7 +10,8 @@ const initialState = {
   description: "",
   date: "",
   location: "",
-  upcoming: null,
+    upcoming: null,
+  code: "",
   link: "",
   linkName: "",
   image:"",
@@ -22,6 +23,8 @@ const EditEvent = (props) => {
     const [images, setImages] = useState(false)
     const [message, setMessage] = useState('')
     const history = useHistory()
+    const { id } = useParams()
+
 
     //upload
     const handleUpload = async (e) => {
@@ -78,14 +81,15 @@ const EditEvent = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`/event/${props.match.params.id}`)
+                const res = await axios.get(`/event/${id}`)
                 setEvents({
                   product_id: res.data.product_id,
                   title: res.data.title,
                   description: res.data.description,
                   date: res.data.date,
                   location: res.data.location,
-                  upcoming: res.data.upcoming,
+                    upcoming: res.data.upcoming,
+                  code: res.data.code,
                   link: res.data.link,
                   linkName: res.data.linkName,
                   image: res.data.image,
@@ -101,7 +105,7 @@ const EditEvent = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`/event/update/${props.match.params.id}`, { ...event, images })
+            const res = await axios.put(`/event/update/${id}`, { ...event, images })
             setMessage(res.data.msg)
 
           setImages(false)
@@ -166,6 +170,16 @@ const EditEvent = (props) => {
                   value={event.location}
                   onChange={handleChangeInput}
                   id="location"
+                />
+
+                <label htmlFor="text">code</label>
+                <input
+                  type="text"
+                  name="code"
+                  required
+                  value={event.code}
+                  onChange={handleChangeInput}
+                  id="code"
                 />
 
                 <label htmlFor="text">upcoming</label>

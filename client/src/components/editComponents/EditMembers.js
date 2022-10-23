@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, useParams } from "react-router-dom"
 import "./Edit.scss"
 import axios from "axios"
 import { AdminClickHandler } from "../homepages/functions/AdminHandler"
@@ -12,7 +12,9 @@ const initialState = {
 const EditMember = (props) => {
   const [member, setMembers] = useState(initialState)
   const [message, setMessage] = useState("")
-  const history = useHistory()
+    const history = useHistory()
+    const { id } = useParams()
+
 
   //handle change input
   const handleChangeInput = (e) => {
@@ -24,7 +26,7 @@ const EditMember = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/fetchmember/${props.match.params.id}`)
+        const res = await axios.get(`/fetchmember/${id}`)
         setMembers({
           email: res.data.email,
           points: res.data.points,
@@ -42,7 +44,7 @@ const EditMember = (props) => {
       try {
           console.log({ ...member })
       const res = await axios.put(
-        `/fetchmember/update/${props.match.params.id}`,
+        `/fetchmember/update/${id}`,
         {
           ...member
         }

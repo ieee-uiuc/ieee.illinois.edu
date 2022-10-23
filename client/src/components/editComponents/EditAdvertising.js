@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory, useParams } from "react-router-dom"
 import "./Edit.scss"
 import axios from "axios"
 import { AdminClickHandler } from "../homepages/functions/AdminHandler"
@@ -17,7 +17,9 @@ const EditAdvertising = (props) => {
   const [advertising, setAdvertisings] = useState(initialState)
   const [images, setImages] = useState(false)
   const [message, setMessage] = useState("")
-  const history = useHistory()
+    const history = useHistory()
+    const { id } = useParams()
+
 
   //upload
   const handleUpload = async (e) => {
@@ -69,7 +71,7 @@ const EditAdvertising = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/advertising/${props.match.params.id}`)
+          const res = await axios.get(`/advertising/${id}`)
         setAdvertisings({
           product_id: res.data.product_id,
           date: res.data.date,
@@ -90,7 +92,7 @@ const EditAdvertising = (props) => {
     e.preventDefault()
     try {
       const res = await axios.put(
-        `/advertising/update/${props.match.params.id}`,
+        `/advertising/update/${id}`,
         { ...advertising, images }
       )
       setMessage(res.data.msg)

@@ -11,9 +11,9 @@ const Advertising = () => {
   // console.log(about)
 
   return (
-    <>
+    <div>
       {!dataAdvertising && (
-        <>
+        <div>
           {advertising.map((item) => (
             <div className="margin-about">
               <div className="about">
@@ -37,7 +37,7 @@ const Advertising = () => {
               </div>
             </div>
           ))}
-        </>
+        </div>
       )}
       {dataAdvertising && (
         <div className="margin-about">
@@ -64,7 +64,7 @@ const Advertising = () => {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 
