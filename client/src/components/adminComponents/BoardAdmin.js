@@ -177,7 +177,6 @@ const BoardsAdmin = () => {
                         cols="30"
                         rows="3" />
 
-
                     <div className="upload">
                         <input
                             type="file"
