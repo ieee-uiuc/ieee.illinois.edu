@@ -89,9 +89,9 @@ const EditBoard = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log(prev)
-      console.log(board.title)
-        console.log(board.name)
+    //   console.log(prev)
+    //   console.log(board.title)
+    //     console.log(board.name)
         let data = {}
         images
           ? (data = {
@@ -103,7 +103,7 @@ const EditBoard = (props) => {
               "images" : prev,
             })
 
-      console.log(data)
+    //   console.log(data)
       const res = await axios.put(`/fetchboard/update/${id}`, data)
       setMessage(res.data.msg)
 

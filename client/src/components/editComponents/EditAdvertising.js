@@ -10,16 +10,16 @@ const initialState = {
   description: "",
   date: "",
   link: "",
-  linkName:""
+  linkName: "",
 }
 
 const EditAdvertising = (props) => {
   const [advertising, setAdvertisings] = useState(initialState)
   const [images, setImages] = useState(false)
   const [message, setMessage] = useState("")
-    const history = useHistory()
-    const { id } = useParams()
-
+  const [prev, setPrev] = useState("")
+  const history = useHistory()
+  const { id } = useParams()
 
   //upload
   const handleUpload = async (e) => {
@@ -71,7 +71,7 @@ const EditAdvertising = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-          const res = await axios.get(`/advertising/${id}`)
+        const res = await axios.get(`/advertising/${id}`)
         setAdvertisings({
           product_id: res.data.product_id,
           date: res.data.date,
@@ -80,6 +80,7 @@ const EditAdvertising = (props) => {
           link: res.data.link,
           linkName: res.data.linkName,
         })
+        setPrev(res.data.images)
       } catch (error) {
         console.log(error)
       }
@@ -91,10 +92,17 @@ const EditAdvertising = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.put(
-        `/advertising/update/${id}`,
-        { ...advertising, images }
-      )
+      let data = {}
+      images
+        ? (data = {
+            ...advertising,
+            images,
+          })
+        : (data = {
+            ...advertising,
+            images: prev,
+          })
+      const res = await axios.put(`/advertising/update/${id}`, data)
       setMessage(res.data.msg)
 
       setImages(false)
@@ -188,9 +196,9 @@ const EditAdvertising = (props) => {
                   onChange={handleUpload}
                   required
                 />
-                <div id="file_img" className="file_img" style={styleUpload}>
-                  <img src={images ? images.url : ""} alt="" />
-                  <span onClick={handleDestroy}>
+                <div id="file_img" className="file_img">
+                  <img src={images ? images.url : prev.url} alt="" />
+                  <span onClick={handleDestroy} style={styleUpload}>
                     <p>X</p>
                   </span>
                 </div>
