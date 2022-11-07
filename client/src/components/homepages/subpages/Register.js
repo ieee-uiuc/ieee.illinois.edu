@@ -70,30 +70,30 @@ const Register = () => {
       }
     } else {
       setTimeout(() => {
-        setMessage("invalid email adress")
+        setMessage("invalid email adress or member already exists")
       }, 2000)
     }
   }
 
-  const deleteMember = async (id) => {
-    try {
-      const res = await axios.delete(`/fetchmember/${id}`)
-      setMessageCond(true)
-      setMessage(`${res.data.msg}`)
-      AdminClickHandler("deleted", "member")
-      setTimeout(() => {
-        setMessageCond(false)
-        setMessage("")
-      }, 2000)
-    } catch (error) {
-      console.log(error)
-    }
+//   const deleteMember = async (id) => {
+//     try {
+//       const res = await axios.delete(`/fetchmember/${id}`)
+//       setMessageCond(true)
+//       setMessage(`${res.data.msg}`)
+//       AdminClickHandler("deleted", "member")
+//       setTimeout(() => {
+//         setMessageCond(false)
+//         setMessage("")
+//       }, 2000)
+//     } catch (error) {
+//       console.log(error)
+//     }
 
-    //delete from ui
-    const memberFilterDel = memberData.filter((item) => item._id !== id)
+//     //delete from ui
+//     const memberFilterDel = memberData.filter((item) => item._id !== id)
 
-    setMemberData(memberFilterDel)
-  }
+//     setMemberData(memberFilterDel)
+//   }
 
   return (
     <div className="wrapper">
