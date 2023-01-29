@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { DataContext } from '../Context/GlobalContext';
 import { scroller } from 'react-scroll';
 import { ClickHandler } from './functions/ClickHandler'
-import Logo from '../../images/logo.png';
+import Logo from '../../images/ieee-logo.png';
 
 
 

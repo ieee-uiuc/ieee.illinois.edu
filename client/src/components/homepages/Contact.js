@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./Contact.scss"
 import axios from "axios"
-// import Load from '../../images/load2.gif'
+// import Load from '../../images/load.gif'
 import { ClickHandler } from "./functions/ClickHandler"
 
 const Contact = () => {
