@@ -130,7 +130,7 @@ const MembersAdmin = () => {
               <div className="single-content">
                 <div className="single-content-info">
                   <h3>
-                    <i style={{ fontWeight: "300" }}>{item.email}</i>
+                    <i>{item.email}</i>
                   </h3>
                   {/* <h3>{"{"}"points": <i style={{fontWeight:"300"}}>{item.points}</i>{"}"},</h3> */}
                 </div>

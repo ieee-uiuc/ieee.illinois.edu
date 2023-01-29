@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="main-contact">
 
                 <div className="footer">
-                    <p>IEEE UIUC Branch 2022</p>
+                    <p>IEEE UIUC Branch 2023</p>
                 </div>
 
             </div>

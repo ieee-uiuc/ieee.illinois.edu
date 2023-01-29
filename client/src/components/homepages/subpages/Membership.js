@@ -9,7 +9,7 @@ export default function Membership() {
     <div className="member">
       <h1 className="member__title">Membership</h1>
 
-      <h1 style={{ marginTop: "2em" }}>Join the Point System</h1>
+      <h1 className="margin-top">Join the Point System</h1>
 
       <div className="divide">
         <div className="section">

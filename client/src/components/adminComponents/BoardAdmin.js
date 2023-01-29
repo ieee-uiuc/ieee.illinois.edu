@@ -136,92 +136,110 @@ const BoardsAdmin = () => {
     }
 
     return (
-        <div className="same-component">
-            <div className="same-form">
-                <form onSubmit={handleSubmit}>
-                    <h4> Board Event component </h4>
+      <div className="same-component">
+        <div className="same-form">
+          <form onSubmit={handleSubmit}>
+            <h4> Board Event component </h4>
 
-                    <label htmlFor="text">id</label>
-                    <input type="text"
-                        name="product_id"
-                        id="product_id"
-                        value={board.product_id}
-                        onChange={handleChangeInput}
-                        required
-                    />
+            <label htmlFor="text">id</label>
+            <input
+              type="text"
+              name="product_id"
+              id="product_id"
+              value={board.product_id}
+              onChange={handleChangeInput}
+              required
+            />
 
-                    <label htmlFor="text">title</label>
-                    <input type="text"
-                        name="title"
-                        id="title"
-                        value={board.title}
-                        onChange={handleChangeInput}
-                        required
-                    />
+            <label htmlFor="text">title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={board.title}
+              onChange={handleChangeInput}
+              required
+            />
 
-                    <label htmlFor="text">Name</label>
-                    <input type="text"
-                        name="name"
-                        id="name"
-                        value={board.name}
-                        onChange={handleChangeInput}
-                        required
-                    />
+            <label htmlFor="text">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={board.name}
+              onChange={handleChangeInput}
+              required
+            />
 
-                    <label htmlFor="text">Description</label>
-                    <textarea name="description"
-                        id="description"
-                        value={board.description}
-                        onChange={handleChangeInput}
-                        required
-                        cols="30"
-                        rows="3" />
+            <label htmlFor="text">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              value={board.description}
+              onChange={handleChangeInput}
+              required
+              cols="30"
+              rows="3"
+            />
 
-                    <div className="upload">
-                        <input
-                            type="file"
-                            name='file'
-                            id="file_up"
-                            onChange={handleUpload}
-                            required
-                        />
-                        <div id="file_img" className="file_img" style={styleUpload}>
-                            <img src={images ? images.url : ''} alt="" />
+            <div className="upload">
+              <input
+                type="file"
+                name="file"
+                id="file_up"
+                onChange={handleUpload}
+                required
+              />
+              <div id="file_img" className="file_img" style={styleUpload}>
+                <img src={images ? images.url : ""} alt="" />
 
-                            <span onClick={handleDestroy}><p>X</p></span>
-                        </div>
-
-                    </div>
-
-                    <button  >Add item</button>
-                </form>
-
+                <span onClick={handleDestroy}>
+                  <p>X</p>
+                </span>
+              </div>
             </div>
-            <div className="same-item">
-                <div className="about-info">
-                    {boardData.map((item) => (
-                        <div className="contents-admin" key={item._id}>
-                            <div className="icons">
-                                <Link to={`/editBoard/${item._id}`}><i className="fas fa-edit"></i></Link>
-                                <i className="fas fa-trash" onClick={() => deleteBoard(item._id)}></i>
-                            </div>
 
-                            <div className="single-content">
-                                <div className="single-content-img">
-                                    <img src={item.images.url} alt="" />
-                                </div>
-                                <div className="single-content-info">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                    <i>{item.name}</i>
-                                </div>
-                            </div>
-                            <h3 className={messageCond ? "new-delete item-delete-tab" : "item-delete-tab"}>{message}</h3>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <button>Add item</button>
+          </form>
         </div>
+        <div className="same-item">
+          <div className="about-info overflow">
+            {boardData.map((item) => (
+              <div className="contents-admin" key={item._id}>
+                <div className="icons">
+                  <Link to={`/editBoard/${item._id}`}>
+                    <i className="fas fa-edit"></i>
+                  </Link>
+                  <i
+                    className="fas fa-trash"
+                    onClick={() => deleteBoard(item._id)}
+                  ></i>
+                </div>
+
+                <div className="single-content">
+                  <div className="single-content-img">
+                    <img src={item.images.url} alt="" />
+                  </div>
+                  <div className="single-content-info">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <i>{item.name}</i>
+                  </div>
+                </div>
+                <h3
+                  className={
+                    messageCond
+                      ? "new-delete item-delete-tab"
+                      : "item-delete-tab"
+                  }
+                >
+                  {message}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     )
 }
 
