@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from "react"
 import "./Landing.scss"
 import FadeIn from "../../FadeIn"
 import { scroller } from "react-scroll"
-import eceb_small from "../../images/eceb_small.jpg"
-const eceb = lazy(() => import("../../images/ECEB.jpg"))
+import eceb_small from "../../images/eceb-small.jpg"
+const eceb = lazy(() => import("../../images/eceb-large.jpg"))
 
 const Landing = () => {
   const scrollToElement = (element) => {
