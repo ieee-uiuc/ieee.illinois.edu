@@ -1,9 +1,8 @@
-import React, { lazy, Suspense } from "react"
+import React from "react"
 import "./Landing.scss"
 import FadeIn from "../../FadeIn"
 import { scroller } from "react-scroll"
 import eceb_small from "../../images/eceb-tiny.jpg"
-const eceb = lazy(() => import("../../images/eceb-large.jpg"))
 
 const Landing = () => {
   const scrollToElement = (element) => {
@@ -21,9 +20,7 @@ const Landing = () => {
       <FadeIn direction={"down"}>
         <div className="landing">
           <div className="landing__image">
-            <Suspense fallback={eceb_small}>
-              <img alt="" src={eceb} />
-            </Suspense>
+            <img alt="" src={eceb_small} />
             <div className="landing__image__overlay" />
           </div>
           <div className="landing__content">
