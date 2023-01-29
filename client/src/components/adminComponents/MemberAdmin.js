@@ -8,12 +8,13 @@ const initialState = {
   points: 0,
 }
 
+
+
 const MembersAdmin = () => {
   const [member, setMember] = useState(initialState)
   const [message, setMessage] = useState("")
   const [messageCond, setMessageCond] = useState(false)
-    const [memberData, setMemberData] = useState([])
-
+  const [memberData, setMemberData] = useState([])
 
   //handle change
   const handleChangeInput = (e) => {
@@ -113,7 +114,7 @@ const MembersAdmin = () => {
         </form>
       </div>
       <div className="same-item">
-        <div className="about-info">
+        <div className="about-info overflow">
           {memberData.map((item) => (
             <div className="contents-admin" key={item._id}>
               <div className="icons">
@@ -128,8 +129,10 @@ const MembersAdmin = () => {
 
               <div className="single-content">
                 <div className="single-content-info">
-                  <h3><i style={{fontWeight:"300"}}>{item.email}</i></h3>
-                  <h3>points: <i style={{fontWeight:"300"}}>{item.points}</i></h3>
+                  <h3>
+                    <i style={{ fontWeight: "300" }}>{item.email}</i>
+                  </h3>
+                  {/* <h3>{"{"}"points": <i style={{fontWeight:"300"}}>{item.points}</i>{"}"},</h3> */}
                 </div>
               </div>
               <h3
