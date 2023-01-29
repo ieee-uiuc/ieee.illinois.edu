@@ -22,7 +22,7 @@ const Admin = () => {
 
           <br />
           <br />
-          <hr style={{ border: "1px solid lightgray" }}></hr>
+          <hr className="lightgray-broder"></hr>
           <br />
 
           <h4 className="admin-title">Advertising Component</h4>
@@ -30,7 +30,7 @@ const Admin = () => {
 
           <br />
           <br />
-          <hr style={{ border: "1px solid lightgray" }}></hr>
+          <hr className="lightgray-broder"></hr>
           <br />
 
           <h4 className="admin-title">Events Component</h4>
@@ -38,7 +38,7 @@ const Admin = () => {
 
           <br />
           <br />
-          <hr style={{ border: "1px solid lightgray" }}></hr>
+          <hr className="lightgray-broder"></hr>
           <br />
 
           <h4 className="admin-title">Board Component</h4>
@@ -46,7 +46,7 @@ const Admin = () => {
 
           <br />
           <br />
-          <hr style={{ border: "1px solid lightgray" }}></hr>
+          <hr className="lightgray-broder"></hr>
           <br />
 
           <h4 className="admin-title">Member Component</h4>

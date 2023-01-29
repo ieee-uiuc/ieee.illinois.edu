@@ -9,7 +9,7 @@ const SignUp = () => {
         <div className="signUp__title">
           <h1>Sign up for IEEE @ UIUC</h1>
         </div>
-        <h1 style={{color:"black", textAlign: "center", marginTop: "1em"}}>Everyone:</h1>
+        <h1 className="misc">Everyone:</h1>
         <Register />
         <div className="signUp__body">
           <div className="signUp__body__grainger">

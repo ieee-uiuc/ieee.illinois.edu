@@ -260,7 +260,7 @@ const EventsAdmin = () => {
           </form>
         </div>
         <div className="same-item">
-          <div className="about-info">
+          <div className="about-info overflow">
             {eventData.map((item) => (
               <div className="contents-admin" key={item._id}>
                 <div className="icons">

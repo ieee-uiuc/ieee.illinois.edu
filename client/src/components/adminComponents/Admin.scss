@@ -1,5 +1,9 @@
 @import "../../colors.scss";
 
+.lightgray-broder {
+  border: "1px solid lightgray"
+}
+
 .overflow {
   max-height: 80vh;
   overflow: scroll;
@@ -10,6 +14,7 @@
   padding: 10px;
   width: 100%;
   z-index: 1;
+  flex: 0.3;
 }
 
 .admin-title {
@@ -22,6 +27,7 @@
 .same-form form {
   display: flex;
   flex-direction: column;
+  flex: 0.3;
 }
 
 .same-form label {
@@ -73,6 +79,7 @@ form button:hover {
   padding: 10px;
   position: relative;
   color: black;
+  flex: 0.65;
 }
 
 .item-delete-tab {
@@ -126,22 +133,25 @@ form button:hover {
   .same-component {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   .same-form {
-    flex: 0 0 300px;
+    flex: .3;
   }
 
   .same-item {
-    flex: 1;
+    flex: .65;
     margin: 0;
     margin-left: 30px;
+    max-width: 100%;
   }
 }
 
 @media screen and (min-width: 664px) {
   .same-form {
-    flex: 0 0 400px;
+    flex: .3;
   }
 }
 
