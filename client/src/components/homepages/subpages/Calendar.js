@@ -6,8 +6,6 @@ import scrollGridPlugin from "@fullcalendar/scrollgrid"
 import googleCalendarPlugin from "@fullcalendar/google-calendar"
 import "./Calendar.scss"
 
-require("dotenv").config()
-
 const API = process.env.REACT_APP_GOOGLE_API_KEY
 
 export default class Calendar extends Component {
