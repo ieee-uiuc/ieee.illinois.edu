@@ -3,8 +3,6 @@ import axios from "axios"
 import { AdminClickHandler } from "../../homepages/functions/AdminHandler"
 import "./addPoints.scss"
 
-require("dotenv").config()
-
 const AddPoints = (props) => {
   const [memberData, setMemberData] = useState([])
   const [code, setCode] = useState([])

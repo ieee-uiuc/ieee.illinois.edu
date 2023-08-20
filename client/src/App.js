@@ -47,7 +47,6 @@ const FadeIn = lazy(() => import("./FadeIn"))
 
 const renderLoader = () => <p>Loading</p>
 
-require("dotenv").config()
 const TRACKING_ID = process.env.REACT_APP_GOOGLE_TRACKING_ID // YOUR_OWN_TRACKING_ID
 
 function App() {
@@ -77,13 +76,13 @@ function App() {
           <Route exact path="/" component={Calendar} />
         </FadeIn>
       </Suspense>
-      <Suspense fallback={renderLoader()}>
+      {/* <Suspense fallback={renderLoader()}>
         <FadeIn direction={"right"}>
           <Element className="UpcomingEvents">
             <Route exact path="/" component={UpcomingEvents} />
           </Element>
         </FadeIn>
-      </Suspense>
+      </Suspense> */}
       <Suspense fallback={renderLoader()}>
         <FadeIn direction={"left"}>
           <Element className="PastEvents">
