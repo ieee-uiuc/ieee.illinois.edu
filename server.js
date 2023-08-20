@@ -27,7 +27,7 @@ const URI = process.env.MONGO_URL
 mongoose.connect(
   URI,
   {
-    userCreateIntdex: true,
+    createIndexes: true,
     useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,

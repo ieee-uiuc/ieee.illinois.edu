@@ -74,27 +74,32 @@ function App() {
       </Suspense>
       <Suspense fallback={renderLoader()}>
         <FadeIn direction={"left"}>
+          <Route exact path="/" component={Calendar} />
+        </FadeIn>
+      </Suspense>
+      <Suspense fallback={renderLoader()}>
+        <FadeIn direction={"right"}>
           <Element className="UpcomingEvents">
             <Route exact path="/" component={UpcomingEvents} />
           </Element>
         </FadeIn>
       </Suspense>
       <Suspense fallback={renderLoader()}>
-        <FadeIn direction={"right"}>
+        <FadeIn direction={"left"}>
           <Element className="PastEvents">
             <Route exact path="/" component={PastEvents} />
           </Element>
         </FadeIn>
       </Suspense>
       <Suspense fallback={renderLoader()}>
-        <FadeIn direction={"left"}>
+        <FadeIn direction={"right"}>
           <Element className="advertising">
             <Route exact path="/" component={Advertising} />
           </Element>
         </FadeIn>
       </Suspense>
       <Suspense fallback={renderLoader()}>
-        <FadeIn direction={"right"}>
+        <FadeIn direction={"left"}>
           <Element className="Contact">
             <Route exact path="/" component={Contact} />
           </Element>
